@@ -1,10 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="dist/output.css" />
-    <link rel="icon" href="src/image/logoWeb.png" />
+    <link rel="stylesheet" href="src/styles/output.css" />
+    <link rel="icon" href="public/image/logoMobile.png" />
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -22,30 +22,18 @@
       rel="stylesheet"
     />
 
-    <title>RY Games</title>
+    <title>RealmYoke Games</title>
   </head>
-  <body class="bg-slate-900 font-poppins overflow-x-hidden">
+  <body class="font-poppins bg-slate-900">
     <nav
-      class="bg-slate-800 text-white flex justify-between items-center w-full h-[70px]"
+      class="flex items-center justify-between w-full h-[70px] px-10 bg-slate-800"
     >
-      <div class="ml-3 md:ml-14">
-        <!-- <p class="font-bold text-lg">LOGO</p> -->
-        <img
-          src="src/image/logo3transparan.png"
-          alt="Logo"
-          class="object-cover hidden md:flex w-[8rem]"
-        />
-        <img
-          src="src/image/logoMobile.png"
-          alt="Logo"
-          class="object-cover flex w-12 md:hidden"
-        />
-      </div>
-      <div
-        class="flex items-center justify-end gap-3 md:w-4/6 md:justify-between"
-      >
-        <div
-          class="flex items-center justify-between bg-slate-900 bg-opacity-50 rounded-md h-9 w-1/2"
+      <a href="#" class="object-cover bg-center w-32">
+        <img src="public/image/logo3transparan.png" alt="Logo RealmYoke" />
+      </a>
+      <div class="">
+        <span
+          class="flex items-center justify-between bg-slate-700 bg-opacity-70 rounded-md h-9 text-white"
         >
           <svg
             class="mx-3 mt-1 text-white"
@@ -71,7 +59,7 @@
           />
           <svg
             id="closeInputNav"
-            class="bi bi-x mx-1 mt-[1px] p-1 cursor-pointer bg-transparent rounded-md transition duration-200 hover:bg-gray-700"
+            class="bi bi-x mx-1 mt-[1px] p-1 cursor-pointer bg-transparent rounded-md transition duration-200 hover:bg-slate-800"
             xmlns="http://www.w3.org/2000/svg"
             width="35"
             height="30"
@@ -82,913 +70,301 @@
               d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"
             />
           </svg>
-        </div>
-        <div class="mr-3 md:mr-14">
-          <button
-            id="loginBtn"
-            class="bg-amber-500 py-2 px-3 font-semibold tracking-wide rounded-lg text-sm transition duration-200 hover:bg-amber-600 md:px-4"
-          >
-            MASUK
-          </button>
-        </div>
+        </span>
       </div>
     </nav>
 
-    <!-- Popup Login -->
-    <section
-      id="loginPage"
-      class="flex items-center justify-center absolute top-0 left-0 z-10 w-full backdrop-blur-0 h-full text-white transition duration-300"
-    >
+    <section class="pt-5">
+      <div class="w-full px-5 flex items-center justify-between">
+        <h1 class="uppercase font-semibold text-2xl text-white">Populer</h1>
+        <span class="flex items-center justify-center gap-5">
+          <button
+            class="rounded-full text-white bg-amber-500 transition duration-100 hover:bg-amber-600"
+            id="scrollL"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 -960 960 960"
+              fill="currentColor"
+              class="w-8 h-8"
+            >
+              <path d="M560-280 360-480l200-200v400Z" />
+            </svg>
+          </button>
+
+          <button
+            class="rounded-full text-white bg-amber-500 transition duration-100 hover:bg-amber-600"
+            id="scrollR"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 -960 960 960"
+              fill="currentColor"
+              class="w-8 h-8"
+            >
+              <path d="M400-280v-400l200 200-200 200Z" />
+            </svg>
+          </button>
+        </span>
+      </div>
       <div
-        id="loginParent"
-        class="scale_0 flex flex-col w-[90%] bg-slate-800 py-7 rounded-3xl shadow-md relative transition duration-300 md:w-[26rem] shadow-slate-600"
+        class="relative w-full flex items-center justify-center overflow-x-hidden p-5"
       >
         <div
-          id="closeLogin"
-          class="absolute top-4 left-4 bg-transparent p-3 cursor-pointer rounded-full transition duration-200 hover:bg-gray-700"
+          class="w-full py-1 flex items-center justify-start gap-8 overflow-x-scroll scrollbar-hidden snap-mandatory snap-x"
+          id="scrollContainer"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="21"
-            height="21"
-            fill="currentColor"
-            class="bi bi-arrow-left"
-            viewBox="0 0 16 16"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"
-            />
-          </svg>
-        </div>
-        <div class="text-center">
-          <h3 class="font-bold text-3xl">Portal</h3>
-          <p class="font-medium text-sm mt-1">Masuk ke Realm-Yoke</p>
-        </div>
-        <form action="" class="mt-12 flex flex-col w-[85%] mx-auto">
-          <label>Email</label>
-          <input
-            spellcheck="false"
-            type="email"
-            class="mb-4 h-10 bg-transparent border-b outline-none"
-          />
-          <label>Password</label>
-          <input
-            spellcheck="false"
-            type="password"
-            class="h-10 bg-transparent border-b outline-none"
-          />
-          <a
-            href=""
-            class="text-xs mt-2 text-amber-500 transition duration-300 hover:text-amber-600"
-            >Tidak ingat kata sandi?</a
-          >
-          <button
-            class="py-3 rounded-full mt-6 bg-amber-500 text-white font-bold transition duration-300 hover:bg-amber-600"
-          >
-            Masuk
-          </button>
-          <p class="text-sm text-center mt-2">
-            Belum punya akun?<a
-              href=""
-              class="text-amber-500 ml-1 transition duration-300 hover:text-amber-600"
-              >Daftar sekarang</a
+          <div class="popGame snap-center">
+            <a
+              href="public/html/dragon-age-the-veilguard.html"
+              class="w-52 h-80 flex items-center justify-center rounded text-white transition-all duration-150 hover:-translate-y-1"
             >
-          </p>
-          <div
-            class="h-[1px] my-8 w-full bg-white opacity-40 flex items-center justify-center"
-          >
-            <p class="px-2 bg-slate-800">OR</p>
-          </div>
-          <button
-            class="py-3 mb-5 rounded-full bg-white text-black font-medium flex items-center justify-center transition duration-300 hover:opacity-70"
-          >
-            <div class="flex items-center justify-center gap-3">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                preserveAspectRatio="xMidYMid"
-                viewBox="0 0 256 262"
-                id="google"
-              >
-                <path
-                  fill="#4285F4"
-                  d="M255.878 133.451c0-10.734-.871-18.567-2.756-26.69H130.55v48.448h71.947c-1.45 12.04-9.283 30.172-26.69 42.356l-.244 1.622 38.755 30.023 2.685.268c24.659-22.774 38.875-56.282 38.875-96.027"
-                ></path>
-                <path
-                  fill="#34A853"
-                  d="M130.55 261.1c35.248 0 64.839-11.605 86.453-31.622l-41.196-31.913c-11.024 7.688-25.82 13.055-45.257 13.055-34.523 0-63.824-22.773-74.269-54.25l-1.531.13-40.298 31.187-.527 1.465C35.393 231.798 79.49 261.1 130.55 261.1"
-                ></path>
-                <path
-                  fill="#FBBC05"
-                  d="M56.281 156.37c-2.756-8.123-4.351-16.827-4.351-25.82 0-8.994 1.595-17.697 4.206-25.82l-.073-1.73L15.26 71.312l-1.335.635C5.077 89.644 0 109.517 0 130.55s5.077 40.905 13.925 58.602l42.356-32.782"
-                ></path>
-                <path
-                  fill="#EB4335"
-                  d="M130.55 50.479c24.514 0 41.05 10.589 50.479 19.438l36.844-35.974C195.245 12.91 165.798 0 130.55 0 79.49 0 35.393 29.301 13.925 71.947l42.211 32.783c10.59-31.477 39.891-54.251 74.414-54.251"
-                ></path>
-              </svg>
-              <p>Continue with Google</p>
-            </div>
-          </button>
-          <button
-            class="py-3 rounded-full bg-blue-600 text-white font-medium flex items-center justify-center transition duration-300 hover:opacity-70"
-          >
-            <div class="flex items-center justify-center gap-3">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                fill="currentColor"
-                class="bi bi-facebook"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"
+              <div class="relative w-full h-full">
+                <img
+                  src="src/image/dragon-age-the-veilguard-mobile-cover.jpg"
+                  alt=""
+                  class="w-full h-full object-cover object-top rounded"
                 />
-              </svg>
-              <p>Continue with Facebook</p>
-            </div>
-          </button>
-        </form>
+                <div
+                  class="absolute bottom-0 w-full px-3 py-4 gradient-card-desk"
+                >
+                  <span class="font-medium text-sm">
+                    <h1>Dragon Age The Veilguard</h1>
+                  </span>
+                  <span class="flex items-center justify-between mt-3">
+                    <div class=""></div>
+                    <div class="text-xs">
+                      <span class="py-1 px-2 rounded bg-gray-300 bg-opacity-20"
+                        >Free</span
+                      >
+                    </div>
+                  </span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="popGame snap-center">
+            <a
+              href="public/html/dragon-age-the-veilguard.html"
+              class="w-52 h-80 flex items-center justify-center rounded text-white transition-all duration-150 hover:-translate-y-1"
+            >
+              <div class="relative w-full h-full">
+                <img
+                  src="src/image/wwe-2k24-mobile-cover.jpg"
+                  alt=""
+                  class="w-full h-full object-cover object-left rounded"
+                />
+                <div
+                  class="absolute bottom-0 w-full px-3 py-4 gradient-card-desk"
+                >
+                  <span class="font-medium text-sm">
+                    <h1>WWE 2k24</h1>
+                  </span>
+                  <span class="flex items-center justify-between mt-3">
+                    <div class=""></div>
+                    <div class="text-xs">
+                      <span class="py-1 px-2 rounded bg-gray-300 bg-opacity-20"
+                        >Free</span
+                      >
+                    </div>
+                  </span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="popGame snap-center">
+            <a
+              href="public/html/dragon-age-the-veilguard.html"
+              class="w-52 h-80 flex items-center justify-center rounded text-white transition-all duration-150 hover:-translate-y-1"
+            >
+              <div class="relative w-full h-full">
+                <img
+                  src="src/image/dying-light-2-stay-human-pc-cover.jpg"
+                  alt=""
+                  class="w-full h-full object-cover object-center rounded"
+                />
+                <div
+                  class="absolute bottom-0 w-full px-3 py-4 gradient-card-desk"
+                >
+                  <span class="font-medium text-sm">
+                    <h1>Dying Light 2 Stay Human</h1>
+                  </span>
+                  <span class="flex items-center justify-between mt-3">
+                    <div class=""></div>
+                    <div class="text-xs">
+                      <span class="py-1 px-2 rounded bg-gray-300 bg-opacity-20"
+                        >Free</span
+                      >
+                    </div>
+                  </span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="popGame snap-center">
+            <a
+              href="public/html/dragon-age-the-veilguard.html"
+              class="w-52 h-80 flex items-center justify-center rounded text-white transition-all duration-150 hover:-translate-y-1"
+            >
+              <div class="relative w-full h-full">
+                <img
+                  src="src/image/enotria-the-last-song-pc-cover.jpg"
+                  alt=""
+                  class="w-full h-full object-cover object-center rounded"
+                />
+                <div
+                  class="absolute bottom-0 w-full px-3 py-4 gradient-card-desk"
+                >
+                  <span class="font-medium text-sm">
+                    <h1>Enotria The Last Song</h1>
+                  </span>
+                  <span class="flex items-center justify-between mt-3">
+                    <div class=""></div>
+                    <div class="text-xs">
+                      <span class="py-1 px-2 rounded bg-gray-300 bg-opacity-20"
+                        >Free</span
+                      >
+                    </div>
+                  </span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="popGame snap-center">
+            <a
+              href="public/html/dragon-age-the-veilguard.html"
+              class="w-52 h-80 flex items-center justify-center rounded text-white transition-all duration-150 hover:-translate-y-1"
+            >
+              <div class="relative w-full h-full">
+                <img
+                  src="src/image/crime-boss-rockay-city-pc-cover.jpg"
+                  alt=""
+                  class="w-full h-full object-cover object-center rounded"
+                />
+                <div
+                  class="absolute bottom-0 w-full px-3 py-4 gradient-card-desk"
+                >
+                  <span class="font-medium text-sm">
+                    <h1>Crime Bos Rockay City</h1>
+                  </span>
+                  <span class="flex items-center justify-between mt-3">
+                    <div class=""></div>
+                    <div class="text-xs">
+                      <span class="py-1 px-2 rounded bg-gray-300 bg-opacity-20"
+                        >Free</span
+                      >
+                    </div>
+                  </span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="popGame snap-center">
+            <a
+              href="public/html/dragon-age-the-veilguard.html"
+              class="w-52 h-80 flex items-center justify-center rounded text-white transition-all duration-150 hover:-translate-y-1"
+            >
+              <div class="relative w-full h-full">
+                <img
+                  src="src/image/carx-street-pc-cover.jpg"
+                  alt=""
+                  class="w-full h-full object-cover object-center rounded"
+                />
+                <div
+                  class="absolute bottom-0 w-full px-3 py-4 gradient-card-desk"
+                >
+                  <span class="font-medium text-sm">
+                    <h1>Carx Street PC</h1>
+                  </span>
+                  <span class="flex items-center justify-between mt-3">
+                    <div></div>
+                    <div class="text-xs">
+                      <span class="py-1 px-2 rounded bg-gray-300 bg-opacity-20"
+                        >Free</span
+                      >
+                    </div>
+                  </span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="popGame snap-center">
+            <a
+              href="public/html/dragon-age-the-veilguard.html"
+              class="w-52 h-80 flex items-center justify-center rounded text-white transition-all duration-150 hover:-translate-y-1"
+            >
+              <div class="relative w-full h-full">
+                <img
+                  src="src/image/armored-core-6-fires-of-rubicon-deluxe-pc-cover.jpg"
+                  alt=""
+                  class="w-full h-full object-cover object-center rounded"
+                />
+                <div
+                  class="absolute bottom-0 w-full px-3 py-4 gradient-card-desk"
+                >
+                  <span class="font-medium text-sm">
+                    <h1>Armored Core 6 Fires of Rubicon</h1>
+                  </span>
+                  <span class="flex items-center justify-between mt-3">
+                    <div></div>
+                    <div class="text-xs">
+                      <span class="py-1 px-2 rounded bg-gray-300 bg-opacity-20"
+                        >Free</span
+                      >
+                    </div>
+                  </span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="popGame snap-center">
+            <a
+              href="public/html/dragon-age-the-veilguard.html"
+              class="w-52 h-80 flex items-center justify-center rounded text-white transition-all duration-150 hover:-translate-y-1"
+            >
+              <div class="relative w-full h-full">
+                <img
+                  src="src/image/horizon-zero-dawn-remastered-pc-cover.jpg"
+                  alt=""
+                  class="w-full h-full object-cover object-center rounded"
+                />
+                <div
+                  class="absolute bottom-0 w-full px-3 py-4 gradient-card-desk"
+                >
+                  <span class="font-medium text-sm">
+                    <h1>Horizon Zero Dawn Remastered</h1>
+                  </span>
+                  <span class="flex items-center justify-between mt-3">
+                    <div></div>
+                    <div class="text-xs">
+                      <span class="py-1 px-2 rounded bg-gray-300 bg-opacity-20"
+                        >Free</span
+                      >
+                    </div>
+                  </span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="w-full">
+        <h1
+          id="noneGame"
+          class="w-full hidden items-center justify-center text-white"
+        >
+          Tidak ada game yang ditemukan
+        </h1>
       </div>
     </section>
 
-    <!-- Banner game populer -->
-    <section class="overflow-hidden relative py-5">
-      <div
-        id="sliderContainer"
-        class="flex items-center justify-start transition-transform duration-500 ease-in-out transform bg-red"
-      >
-        <!-- Gambar-gambar slider -->
-        <div class="w-full flex-shrink-0 flex items-center justify-center">
-          <a href="#" class="flex items-center justify-center">
-            <img
-              src="https://1.bp.blogspot.com/-LGCgV8UCW4s/YIAfsVL6FKI/AAAAAAABJVc/2EP7rm0EtpsrcMLComdj6Sz0IUaL2UDgwCLcBGAsYHQ/s460/tekken-7-pc-cover.jpg"
-              alt=""
-              class="w-[90%] h-auto object-cover rounded-lg md:w-[600px] shadow-md shadow-slate-700"
-            />
-          </a>
-        </div>
-        <div class="w-full flex-shrink-0 flex items-center justify-center">
-          <a href="#" class="flex items-center justify-center">
-            <img
-              src="https://1.bp.blogspot.com/-fP4noG-YsEQ/ZbNPF-dLr7I/AAAAAAABals/gqzYoUoPovgu9FkHMOlsmhCa6RX5RAkAwCNcBGAsYHQ/s460/tekken-8-ultimate-edition-pc-cover.jpg"
-              alt=""
-              class="w-[90%] h-auto object-cover rounded-lg md:w-[600px] shadow-md shadow-slate-700"
-            />
-          </a>
-        </div>
-        <div class="w-full flex-shrink-0 flex items-center justify-center">
-          <a href="#" class="flex items-center justify-center">
-            <img
-              src="src/GamesCover/gameList2/powerwash-simulator-pc-cover.jpg"
-              alt=""
-              class="w-[90%] h-auto object-cover rounded-lg md:w-[600px] shadow-md shadow-slate-700"
-            />
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Game List -->
-    <section class="pb-7">
-      <p class="uppercase font-semibold text-white text-2xl ml-5">Populer</p>
-
-      <span
-        id="loadingCanvas"
-        class="transform hidden items-center justify-center my-5"
-      >
-        <div
-          class="inline-block h-10 w-10 animate-spin rounded-full border-4 border-solid border-amber-500 border-e-transparent align-[-0.125em] text-surface motion-reduce:animate-[spin_1.5s_linear_infinite]"
-          role="status"
-        ></div>
-      </span>
-
-      <div id="gameList1" class="gameList font-montserrat w-full mt-5 flex">
-        <ul
-          class="gameList mx-auto my-5 w-[95%] flex flex-wrap items-center justify-center gap-3 md:gap-0 md:justify-around md:gap-y-10"
-        >
-          <!-- Granblue Fantasy Versus Rising Deluxe Edition -->
-          <li
-            class="flex flex-col text-white bg-red-950 object-cover w-[48%] rounded-xl pb-3 shadow-lg shadow-slate-800 md:w-[30%]"
-          >
-            <a
-              href="https://www.ovagames.com/granblue-fantasy-versus-rising-deluxe-edition-multi9-elamigos.html"
-            >
-              <img
-                src="https://1.bp.blogspot.com/-r2Hz2JNwIoE/ZbMSnGnjffI/AAAAAAABalM/l4gy8kamMNY7UaIy3CjaxD__n4Sq_XkdgCNcBGAsYHQ/s460/granblue-fantasy-versus-rising-pc-cover.jpg"
-                alt=""
-                class="rounded-xl"
-              />
-              <div class="mx-auto w-[90%] md:w-[95%]">
-                <p
-                  id="nameGame"
-                  class="overflow-hidden text-ellipsis whitespace-nowrap font-bold text-base my-2"
-                >
-                  Granblue Fantasy Versus Rising Deluxe Edition
-                </p>
-                <p
-                  class="text-center text-xs w-full bg-amber-500 rounded py-2 text-red-950 font-semibold transition duration-200 hover:bg-amber-600 md:text-sm md:py-3"
-                >
-                  Download
-                </p>
-              </div>
-            </a>
-          </li>
-
-          <!-- Lords of the Fallen Deluxe Edition -->
-          <li
-            class="flex flex-col text-white bg-red-950 object-cover w-[48%] rounded-xl pb-3 shadow-lg shadow-slate-800 md:w-[30%]"
-          >
-            <a
-              href="https://www.ovagames.com/794492-lords-of-the-fallen-deluxe-edition-multi12-elamigos.html"
-            >
-              <img
-                src="https://1.bp.blogspot.com/-5eYIK5bKiGk/ZSnuRK31ljI/AAAAAAABZd8/af-MZvAv-3sV-LHJYe_hKYSoaNTnpRFUwCNcBGAsYHQ/s460/lords-of-the-fallen-pc-cover.jpg"
-                alt=""
-                class="rounded-xl"
-              />
-              <div class="mx-auto w-[90%] md:w-[95%]">
-                <p
-                  id="nameGame"
-                  class="overflow-hidden text-ellipsis whitespace-nowrap font-bold text-base my-2"
-                >
-                  Lords of the Fallen Deluxe Edition
-                </p>
-                <p
-                  class="text-center text-xs w-full bg-amber-500 rounded py-2 text-red-950 font-semibold transition duration-200 hover:bg-amber-600 md:text-sm md:py-3"
-                >
-                  Download
-                </p>
-              </div>
-            </a>
-          </li>
-
-          <!-- Drug Dealer Simulator 2 -->
-          <li
-            class="flex flex-col text-white bg-red-950 object-cover w-[48%] rounded-xl pb-3 shadow-lg shadow-slate-800 md:w-[30%]"
-          >
-            <a
-              href="https://www.ovagames.com/drug-dealer-simulator-2-multi11-elamigos.html"
-            >
-              <img
-                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhTTCb6ZzVh17Yw-YPku8dBJJfjqlm90rp3iMM5LRBYScLlbMV-4Bk_J7yoK6pPrptA3iEANqhyWzXTO92Gun1jZDh8ndIpSAbwjgynDsw0sFjxE13itArtmg5U1WJi_ti0CVv3RFvGbgPm81KosflbogIWKnlPcllG2sRY7sLzCKFTyAH4Xq32H3mGyqQ/s460/drug-dealer-simulator-2-pc-cover.jpg"
-                alt=""
-                class="rounded-xl"
-              />
-              <div class="mx-auto w-[90%] md:w-[95%]">
-                <p
-                  id="nameGame"
-                  class="overflow-hidden text-ellipsis whitespace-nowrap font-bold text-base my-2"
-                >
-                  Drug Dealer Simulator 2
-                </p>
-                <p
-                  class="text-center text-xs w-full bg-amber-500 rounded py-2 text-red-950 font-semibold transition duration-200 hover:bg-amber-600 md:text-sm md:py-3"
-                >
-                  Download
-                </p>
-              </div>
-            </a>
-          </li>
-
-          <!-- Crown Wars The Black Prince -->
-          <li
-            class="flex flex-col text-white bg-red-950 object-cover w-[48%] rounded-xl pb-3 shadow-lg shadow-slate-800 md:w-[30%]"
-          >
-            <a
-              href="https://www.ovagames.com/crown-wars-the-black-prince-multi13-elamigos.html"
-            >
-              <img
-                src="https://1.bp.blogspot.com/-Ao--J8BZI70/ZlAm-b6CONI/AAAAAAABcnI/RDAJ_GFrbaQn1G7xF257IMO4TTbymIzDACNcBGAsYHQ/s460/crown-wars-the-black-prince-pc-cover.jpg"
-                alt=""
-                class="rounded-xl"
-              />
-              <div class="mx-auto w-[90%] md:w-[95%]">
-                <p
-                  id="nameGame"
-                  class="overflow-hidden text-ellipsis whitespace-nowrap font-bold text-base my-2"
-                >
-                  Crown Wars The Black Prince
-                </p>
-                <p
-                  class="text-center text-xs w-full bg-amber-500 rounded py-2 text-red-950 font-semibold transition duration-200 hover:bg-amber-600 md:text-sm md:py-3"
-                >
-                  Download
-                </p>
-              </div>
-            </a>
-          </li>
-
-          <!-- Cities Skylines II Ultimate Edition -->
-          <li
-            class="flex flex-col text-white bg-red-950 object-cover w-[48%] rounded-xl pb-3 shadow-lg shadow-slate-800 md:w-[30%]"
-          >
-            <a
-              href="https://www.ovagames.com/947977-cities-skylines-ii-ultimate-edition-multi12-elamigos.html"
-            >
-              <img
-                src="https://blogger.googleusercontent.com/img/a/AVvXsEj2toQUoROV3AeMrYTJr3-noJignl2qWoYDGeSEmX3hxPgqe5p0X3mM8LTjrBXo3xod9YG5s31AKU5vrBouhAzYLcolaE8DEX_g1wv1nRn9TDflB2rPhn76rX2r47EjSsRNNJ7FHVO8lLiIm-mAZBKbuVgZ0mte3OAqctmQsy3JVen4QkpE6njfFlIwljw"
-                alt=""
-                class="rounded-xl"
-              />
-              <div class="mx-auto w-[90%] md:w-[95%]">
-                <p
-                  id="nameGame"
-                  class="overflow-hidden text-ellipsis whitespace-nowrap font-bold text-base my-2"
-                >
-                  Cities Skylines II Ultimate Edition
-                </p>
-                <p
-                  class="text-center text-xs w-full bg-amber-500 rounded py-2 text-red-950 font-semibold transition duration-200 hover:bg-amber-600 md:text-sm md:py-3"
-                >
-                  Download
-                </p>
-              </div>
-            </a>
-          </li>
-
-          <!-- Nickelodeon All-Star Brawl 2 Deluxe Edition -->
-          <li
-            class="flex flex-col text-white bg-red-950 object-cover w-[48%] rounded-xl pb-3 shadow-lg shadow-slate-800 md:w-[30%]"
-          >
-            <a
-              href="https://www.ovagames.com/854749-nickelodeon-all-star-brawl-2-deluxe-edition-multi6-elamigos.html"
-            >
-              <img
-                src="https://blogger.googleusercontent.com/img/a/AVvXsEgoTdAKfsE5LYY0-kiIYYlYK4Un2krQwLoA7q4qbHuIhSiDpv8vfPgzHHlO7Amlh3va7Owj0SOu9tt8jjfNPn50F31IlZXLBmH13Lgd98UHj92ujUPb2xEs6kzdvfv6jnzG1XS1YzIo5n_5Gut5yjsDP3wZ4OG7VrHI1p5WMF1NEQmXHgSQ_HhHNcgs2L8"
-                alt=""
-                class="rounded-xl"
-              />
-              <div class="mx-auto w-[90%] md:w-[95%]">
-                <p
-                  id="nameGame"
-                  class="overflow-hidden text-ellipsis whitespace-nowrap font-bold text-base my-2"
-                >
-                  Nickelodeon All-Star Brawl 2 Deluxe Edition
-                </p>
-                <p
-                  class="text-center text-xs w-full bg-amber-500 rounded py-2 text-red-950 font-semibold transition duration-200 hover:bg-amber-600 md:text-sm md:py-3"
-                >
-                  Download
-                </p>
-              </div>
-            </a>
-          </li>
-
-          <!-- Broken Roads -->
-          <li
-            class="flex flex-col text-white bg-red-950 object-cover w-[48%] rounded-xl pb-3 shadow-lg shadow-slate-800 md:w-[30%]"
-          >
-            <a
-              href="https://www.ovagames.com/broken-roads-multi8-elamigos.html"
-            >
-              <img
-                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjCRP0b9bcfmYn4H1jt5CYEDv3AYD1n6x2GxhV5Z-PQ3PoeobI90j8bnXfAFErsSM-aECTgS0uzxWMF4cV3vcZ1bWX3ZGUFDrH0ndcELIscctEaYIBoc_I2G357gtxW6l256DyPI0IcL9I5BkETTqYdQ0Wv3Zg3jmQd36gFh5ZOANo14u6CmFjtDGYRE6k/s460/broken-roads-pc-cover.jpg"
-                alt=""
-                class="rounded-xl"
-              />
-              <div class="mx-auto w-[90%] md:w-[95%]">
-                <p
-                  id="nameGame"
-                  class="overflow-hidden text-ellipsis whitespace-nowrap font-bold text-base my-2"
-                >
-                  Broken Roads
-                </p>
-                <p
-                  class="text-center text-xs w-full bg-amber-500 rounded py-2 text-red-950 font-semibold transition duration-200 hover:bg-amber-600 md:text-sm md:py-3"
-                >
-                  Download
-                </p>
-              </div>
-            </a>
-          </li>
-
-          <!-- Elden Ring Deluxe Edition -->
-          <li
-            class="flex flex-col text-white bg-red-950 object-cover w-[48%] rounded-xl pb-3 shadow-lg shadow-slate-800 md:w-[30%]"
-          >
-            <a
-              href="https://www.ovagames.com/888848-elden-ring-deluxe-edition-multi14-elamigos.html"
-            >
-              <img
-                src="https://1.bp.blogspot.com/-kOTxQvgEGYY/YhiUp1-hXWI/AAAAAAAAAOc/4JAEN2nbuwgMW7qyxasz9SlXO1lN9MQawCNcBGAsYHQ/s460/elden-ring-pc-cover.jpg"
-                alt=""
-                class="rounded-xl"
-              />
-              <div class="mx-auto w-[90%] md:w-[95%]">
-                <p
-                  id="nameGame"
-                  class="overflow-hidden text-ellipsis whitespace-nowrap font-bold text-base my-2"
-                >
-                  Elden Ring Deluxe Edition
-                </p>
-                <p
-                  class="text-center text-xs w-full bg-amber-500 rounded py-2 text-red-950 font-semibold transition duration-200 hover:bg-amber-600 md:text-sm md:py-3"
-                >
-                  Download
-                </p>
-              </div>
-            </a>
-          </li>
-
-          <!-- Crime Boss Rockay City -->
-          <li
-            class="flex flex-col text-white bg-red-950 object-cover w-[48%] rounded-xl pb-3 shadow-lg shadow-slate-800 md:w-[30%]"
-          >
-            <a
-              href="https://www.ovagames.com/crime-boss-rockay-city-multi11-elamigos.html"
-            >
-              <img
-                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj99SkDYqlIec_ZuSXNZP50mp0gAVTNORc4gaTBuyf3i84NShFaVh7u5xcDWYhT5oGtfMkoZ7O1eF5fe6OTZveVR5TY4iNzX9Is4wRH8MO5j1uBOviIWRBgJDPCm6mgdqD1DvGYwsrHLdgAoLl_lJVasHCqDPmpj2Ge_8dntjziOAp5dWC1yJV0OZeVV3k/s460/crime-boss-rockay-city-pc-cover.jpg"
-                alt=""
-                class="rounded-xl"
-              />
-              <div class="mx-auto w-[90%] md:w-[95%]">
-                <p
-                  id="nameGame"
-                  class="overflow-hidden text-ellipsis whitespace-nowrap font-bold text-base my-2"
-                >
-                  Crime Boss Rockay City
-                </p>
-                <p
-                  class="text-center text-xs w-full bg-amber-500 rounded py-2 text-red-950 font-semibold transition duration-200 hover:bg-amber-600 md:text-sm md:py-3"
-                >
-                  Download
-                </p>
-              </div>
-            </a>
-          </li>
-
-          <!-- Last Epoch -->
-          <li
-            class="flex flex-col text-white bg-red-950 object-cover w-[48%] rounded-xl pb-3 shadow-lg shadow-slate-800 md:w-[30%]"
-          >
-            <a href="https://www.ovagames.com/last-epoch-multi9-elamigos.html">
-              <img
-                src="https://1.bp.blogspot.com/-9u49PuHhvq4/ZdbcDKWcLEI/AAAAAAABavA/W_5ozmGpwgIJ6HNT6C59p9hLfJvXEcriQCNcBGAsYHQ/s460/last-epoch-pc-cover.jpg"
-                alt=""
-                class="rounded-xl"
-              />
-              <div class="mx-auto w-[90%] md:w-[95%]">
-                <p
-                  id="nameGame"
-                  class="overflow-hidden text-ellipsis whitespace-nowrap font-bold text-base my-2"
-                >
-                  Last Epoch
-                </p>
-                <p
-                  class="text-center text-xs w-full bg-amber-500 rounded py-2 text-red-950 font-semibold transition duration-200 hover:bg-amber-600 md:text-sm md:py-3"
-                >
-                  Download
-                </p>
-              </div>
-            </a>
-          </li>
-
-          <!-- Dragon Ball Z Kakarot Ultimate Edition -->
-          <li
-            class="flex flex-col text-white bg-red-950 object-cover w-[48%] rounded-xl pb-3 shadow-lg shadow-slate-800 md:w-[30%]"
-          >
-            <a
-              href="https://www.ovagames.com/394845-dragon-ball-z-kakarot-ultimate-edition-multi13-elamigos.html"
-            >
-              <img
-                src="https://1.bp.blogspot.com/-oVK3h-DP4no/Y8GaOxnFkyI/AAAAAAABVPQ/5o7DaixAwDgJVHibPzDF4Ajn70rHoQ13wCNcBGAsYHQ/s460/dragon-ball-z-kakarot-pc-cover.jpg"
-                alt=""
-                class="rounded-xl"
-              />
-              <div class="mx-auto w-[90%] md:w-[95%]">
-                <p
-                  id="nameGame"
-                  class="overflow-hidden text-ellipsis whitespace-nowrap font-bold text-base my-2"
-                >
-                  Dragon Ball Z Kakarot Ultimate Edition
-                </p>
-                <p
-                  class="text-center text-xs w-full bg-amber-500 rounded py-2 text-red-950 font-semibold transition duration-200 hover:bg-amber-600 md:text-sm md:py-3"
-                >
-                  Download
-                </p>
-              </div>
-            </a>
-          </li>
-
-          <!-- Age of Empires II Definitive Edition -->
-          <li
-            class="flex flex-col text-white bg-red-950 object-cover w-[48%] rounded-xl pb-3 shadow-lg shadow-slate-800 md:w-[30%]"
-          >
-            <a
-              href="https://www.ovagames.com/374868-age-of-empires-ii-definitive-edition-multi17-elamigos.html"
-            >
-              <img
-                src="https://1.bp.blogspot.com/-De0Ccphblww/X28CFj2gZ1I/AAAAAAABDM8/8ZTz17rucAUdzlB2XI8a-1lRnmGsxVA2QCLcBGAsYHQ/s460/age-of-empires-2-definitive-edition-pc-cover.jpg"
-                alt=""
-                class="rounded-xl"
-              />
-              <div class="mx-auto w-[90%] md:w-[95%]">
-                <p
-                  id="nameGame"
-                  class="overflow-hidden text-ellipsis whitespace-nowrap font-bold text-base my-2"
-                >
-                  Age of Empires II Definitive Edition
-                </p>
-                <p
-                  class="text-center text-xs w-full bg-amber-500 rounded py-2 text-red-950 font-semibold transition duration-200 hover:bg-amber-600 md:text-sm md:py-3"
-                >
-                  Download
-                </p>
-              </div>
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <div id="gameList2" class="gameList hidden font-montserrat w-full mt-5">
-        <ul
-          class="gameList mx-auto my-5 w-[95%] flex flex-wrap items-center justify-center gap-3 md:gap-0 md:justify-around md:gap-y-10"
-        >
-          <!-- PowerWash Simulator -->
-          <li
-            class="flex flex-col text-white bg-red-950 object-cover w-[48%] rounded-xl pb-3 shadow-lg shadow-slate-800 md:w-[30%]"
-          >
-            <a href="">
-              <img
-                src="src/GamesCover/gameList2/powerwash-simulator-pc-cover.jpg"
-                alt=""
-                class="rounded-xl"
-              />
-              <div class="mx-auto w-[90%] md:w-[95%]">
-                <p
-                  id="nameGame"
-                  class="overflow-hidden text-ellipsis whitespace-nowrap font-bold text-base my-2"
-                >
-                  PowerWash Simulator
-                </p>
-                <p
-                  class="text-center text-xs w-full bg-amber-500 rounded py-2 text-red-950 font-semibold transition duration-200 hover:bg-amber-600 md:text-sm md:py-3"
-                >
-                  Download
-                </p>
-              </div>
-            </a>
-          </li>
-
-          <!-- Starfield Premium Edition -->
-          <li
-            class="flex flex-col text-white bg-red-950 object-cover w-[48%] rounded-xl pb-3 shadow-lg shadow-slate-800 md:w-[30%]"
-          >
-            <a href="">
-              <img
-                src="src/GamesCover/gameList2/starfield-pc-cover.jpg"
-                alt=""
-                class="rounded-xl"
-              />
-              <div class="mx-auto w-[90%] md:w-[95%]">
-                <p
-                  id="nameGame"
-                  class="overflow-hidden text-ellipsis whitespace-nowrap font-bold text-base my-2"
-                >
-                  Starfield Premium Edition
-                </p>
-                <p
-                  class="text-center text-xs w-full bg-amber-500 rounded py-2 text-red-950 font-semibold transition duration-200 hover:bg-amber-600 md:text-sm md:py-3"
-                >
-                  Download
-                </p>
-              </div>
-            </a>
-          </li>
-
-          <!-- TEKKEN 7 Ultimate Edition -->
-          <li
-            class="flex flex-col text-white bg-red-950 object-cover w-[48%] rounded-xl pb-3 shadow-lg shadow-slate-800 md:w-[30%]"
-          >
-            <a href="">
-              <img
-                src="src/GamesCover/gameList2/tekken-7-pc-cover.jpg"
-                alt=""
-                class="rounded-xl"
-              />
-              <div class="mx-auto w-[90%] md:w-[95%]">
-                <p
-                  id="nameGame"
-                  class="overflow-hidden text-ellipsis whitespace-nowrap font-bold text-base my-2"
-                >
-                  TEKKEN 7 Ultimate Edition
-                </p>
-                <p
-                  class="text-center text-xs w-full bg-amber-500 rounded py-2 text-red-950 font-semibold transition duration-200 hover:bg-amber-600 md:text-sm md:py-3"
-                >
-                  Download
-                </p>
-              </div>
-            </a>
-          </li>
-
-          <!-- TEKKEN 8 Ultimate Edition -->
-          <li
-            class="flex flex-col text-white bg-red-950 object-cover w-[48%] rounded-xl pb-3 shadow-lg shadow-slate-800 md:w-[30%]"
-          >
-            <a href="">
-              <img
-                src="src/GamesCover/gameList2/tekken-8-ultimate-edition-pc-cover.jpg"
-                alt=""
-                class="rounded-xl"
-              />
-              <div class="mx-auto w-[90%] md:w-[95%]">
-                <p
-                  id="nameGame"
-                  class="overflow-hidden text-ellipsis whitespace-nowrap font-bold text-base my-2"
-                >
-                  TEKKEN 8 Ultimate Edition
-                </p>
-                <p
-                  class="text-center text-xs w-full bg-amber-500 rounded py-2 text-red-950 font-semibold transition duration-200 hover:bg-amber-600 md:text-sm md:py-3"
-                >
-                  Download
-                </p>
-              </div>
-            </a>
-          </li>
-
-          <!-- Granblue Fantasy Relink Special Edition -->
-          <li
-            class="flex flex-col text-white bg-red-950 object-cover w-[48%] rounded-xl pb-3 shadow-lg shadow-slate-800 md:w-[30%]"
-          >
-            <a href="">
-              <img
-                src="src/GamesCover/gameList2/granblue-fantasy-relink-pc-cover.jpg"
-                alt=""
-                class="rounded-xl"
-              />
-              <div class="mx-auto w-[90%] md:w-[95%]">
-                <p
-                  id="nameGame"
-                  class="overflow-hidden text-ellipsis whitespace-nowrap font-bold text-base my-2"
-                >
-                  Granblue Fantasy Relink Special Edition
-                </p>
-                <p
-                  class="text-center text-xs w-full bg-amber-500 rounded py-2 text-red-950 font-semibold transition duration-200 hover:bg-amber-600 md:text-sm md:py-3"
-                >
-                  Download
-                </p>
-              </div>
-            </a>
-          </li>
-
-          <!-- Ranch Simulator Build Farm Hunt -->
-          <li
-            class="flex flex-col text-white bg-red-950 object-cover w-[48%] rounded-xl pb-3 shadow-lg shadow-slate-800 md:w-[30%]"
-          >
-            <a href="">
-              <img
-                src="src/GamesCover/gameList2/ranch-simulator-build-farm-hunt-pc-cover.jpg"
-                alt=""
-                class="rounded-xl"
-              />
-              <div class="mx-auto w-[90%] md:w-[95%]">
-                <p
-                  id="nameGame"
-                  class="overflow-hidden text-ellipsis whitespace-nowrap font-bold text-base my-2"
-                >
-                  Ranch Simulator Build Farm Hunt
-                </p>
-                <p
-                  class="text-center text-xs w-full bg-amber-500 rounded py-2 text-red-950 font-semibold transition duration-200 hover:bg-amber-600 md:text-sm md:py-3"
-                >
-                  Download
-                </p>
-              </div>
-            </a>
-          </li>
-
-          <!-- Kingdom Hearts III and Re-Mind -->
-          <li
-            class="flex flex-col text-white bg-red-950 object-cover w-[48%] rounded-xl pb-3 shadow-lg shadow-slate-800 md:w-[30%]"
-          >
-            <a href="">
-              <img
-                src="src/GamesCover/gameList2/kingdom-hearts-iii-and-re-mind-pc-cover.jpg"
-                alt=""
-                class="rounded-xl"
-              />
-              <div class="mx-auto w-[90%] md:w-[95%]">
-                <p
-                  id="nameGame"
-                  class="overflow-hidden text-ellipsis whitespace-nowrap font-bold text-base my-2"
-                >
-                  Kingdom Hearts III and Re-Mind
-                </p>
-                <p
-                  class="text-center text-xs w-full bg-amber-500 rounded py-2 text-red-950 font-semibold transition duration-200 hover:bg-amber-600 md:text-sm md:py-3"
-                >
-                  Download
-                </p>
-              </div>
-            </a>
-          </li>
-
-          <!-- Euro Truck Simulator 2 -->
-          <li
-            class="flex flex-col text-white bg-red-950 object-cover w-[48%] rounded-xl pb-3 shadow-lg shadow-slate-800 md:w-[30%]"
-          >
-            <a href="">
-              <img
-                src="src/GamesCover/gameList2/euro-truck-simulator-2-pc-cover.jpg"
-                alt=""
-                class="rounded-xl"
-              />
-              <div class="mx-auto w-[90%] md:w-[95%]">
-                <p
-                  id="nameGame"
-                  class="overflow-hidden text-ellipsis whitespace-nowrap font-bold text-base my-2"
-                >
-                  Euro Truck Simulator 2
-                </p>
-                <p
-                  class="text-center text-xs w-full bg-amber-500 rounded py-2 text-red-950 font-semibold transition duration-200 hover:bg-amber-600 md:text-sm md:py-3"
-                >
-                  Download
-                </p>
-              </div>
-            </a>
-          </li>
-
-          <!-- Call of Duty Black Ops Cold War -->
-          <li
-            class="flex flex-col text-white bg-red-950 object-cover w-[48%] rounded-xl pb-3 shadow-lg shadow-slate-800 md:w-[30%]"
-          >
-            <a href="">
-              <img
-                src="src/GamesCover/gameList2/cod-black-ops-cold-war-pc-cover.jpg"
-                alt=""
-                class="rounded-xl"
-              />
-              <div class="mx-auto w-[90%] md:w-[95%]">
-                <p
-                  id="nameGame"
-                  class="overflow-hidden text-ellipsis whitespace-nowrap font-bold text-base my-2"
-                >
-                  Call of Duty Black Ops Cold War
-                </p>
-                <p
-                  class="text-center text-xs w-full bg-amber-500 rounded py-2 text-red-950 font-semibold transition duration-200 hover:bg-amber-600 md:text-sm md:py-3"
-                >
-                  Download
-                </p>
-              </div>
-            </a>
-          </li>
-
-          <!-- Ghost of Tsushima Directors Cut -->
-          <li
-            class="flex flex-col text-white bg-red-950 object-cover w-[48%] rounded-xl pb-3 shadow-lg shadow-slate-800 md:w-[30%]"
-          >
-            <a href="">
-              <img
-                src="src/GamesCover/gameList2/ghost-of-tsushima-directors-cut-pc-cover.jpg"
-                alt=""
-                class="rounded-xl"
-              />
-              <div class="mx-auto w-[90%] md:w-[95%]">
-                <p
-                  id="nameGame"
-                  class="overflow-hidden text-ellipsis whitespace-nowrap font-bold text-base my-2"
-                >
-                  Ghost of Tsushima Directors Cut
-                </p>
-                <p
-                  class="text-center text-xs w-full bg-amber-500 rounded py-2 text-red-950 font-semibold transition duration-200 hover:bg-amber-600 md:text-sm md:py-3"
-                >
-                  Download
-                </p>
-              </div>
-            </a>
-          </li>
-
-          <!-- Horizon Forbidden West Complete Edition -->
-          <li
-            class="flex flex-col text-white bg-red-950 object-cover w-[48%] rounded-xl pb-3 shadow-lg shadow-slate-800 md:w-[30%]"
-          >
-            <a href="">
-              <img
-                src="src/GamesCover/gameList2/horizon-forbidden-west-pc-cover.jpg"
-                alt=""
-                class="rounded-xl"
-              />
-              <div class="mx-auto w-[90%] md:w-[95%]">
-                <p
-                  id="nameGame"
-                  class="overflow-hidden text-ellipsis whitespace-nowrap font-bold text-base my-2"
-                >
-                  Horizon Forbidden West Complete Edition
-                </p>
-                <p
-                  class="text-center text-xs w-full bg-amber-500 rounded py-2 text-red-950 font-semibold transition duration-200 hover:bg-amber-600 md:text-sm md:py-3"
-                >
-                  Download
-                </p>
-              </div>
-            </a>
-          </li>
-
-          <!-- FIFA 23 -->
-          <li
-            class="flex flex-col text-white bg-red-950 object-cover w-[48%] rounded-xl pb-3 shadow-lg shadow-slate-800 md:w-[30%]"
-          >
-            <a href="">
-              <img
-                src="src/GamesCover/gameList2/fifa-23-pc-cover.jpg"
-                alt=""
-                class="rounded-xl"
-              />
-              <div class="mx-auto w-[90%] md:w-[95%]">
-                <p
-                  id="nameGame"
-                  class="overflow-hidden text-ellipsis whitespace-nowrap font-bold text-base my-2"
-                >
-                  FIFA 23
-                </p>
-                <p
-                  class="text-center text-xs w-full bg-amber-500 rounded py-2 text-red-950 font-semibold transition duration-200 hover:bg-amber-600 md:text-sm md:py-3"
-                >
-                  Download
-                </p>
-              </div>
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <div
-        id="navigasi"
-        class="flex items-center justify-center text-white gap-2.5"
-      >
-        <p
-          class="border border-white py-1 px-2 rounded text-sm"
-          id="pageIndicator"
-        >
-          Page 1 of 2
-        </p>
-        <!-- <button
-          id="prevBtn"
-          class="hidden border border-white p-1 rounded transition duration-200 hover:bg-amber-800 hover:border-amber-500"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="currentColor"
-            class="bi bi-caret-left-fill"
-            viewBox="0 0 16 16"
-          >
-            <path
-              d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"
-            />
-          </svg>
-        </button> -->
-        <button
-          id="btn1"
-          class="bg-amber-800 border border-amber-500 w-6 h-6 rounded text-xs transition duration-200"
-        >
-          1
-        </button>
-        <button
-          id="btn2"
-          class="border border-white w-6 h-6 rounded text-xs transition duration-200"
-        >
-          2
-        </button>
-        <!-- <button
-          id="nextBtn"
-          class="border border-white p-1 rounded transition duration-200 hover:bg-amber-800 hover:border-amber-500"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="currentColor"
-            class="bi bi-caret-right-fill"
-            viewBox="0 0 16 16"
-          >
-            <path
-              d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"
-            />
-          </svg>
-        </button> -->
-      </div>
-    </section>
-
-    <footer
-      class="text-center bg-slate-800 text-white py-3 text-xs font-semibold"
-    >
-      COPYRIGHT © 2024 RY-Games
-    </footer>
-
-    <script src="src/script.js"></script>
+    <script src="public/js/main.js"></script>
   </body>
 </html>

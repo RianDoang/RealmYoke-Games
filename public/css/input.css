@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tambahkan di dalam file CSS Anda */
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none; /* Untuk Chrome, Safari, dan Edge */
+}
+
+.gradient-card-desk {
+  background: linear-gradient(
+    to top,
+    rgba(2, 6, 23, 0.9),
+    rgba(2, 6, 23, 0.7),
+    rgba(2, 6, 23, 0.7),
+    rgba(2, 6, 23, 0.5),
+    rgba(2, 6, 23, 0)
+  );
+
+  @apply rounded-sm
+}
