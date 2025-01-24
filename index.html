@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="src/styles/output.css" />
-    <link rel="icon" href="public/image/logoMobile.png" />
+    <link rel="stylesheet" href="src/css/output.css" />
+
+    <!-- Web Icon -->
+    <link rel="icon" href="src/assets/logo/logoMobile.png" />
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -14,357 +16,759 @@
       rel="stylesheet"
     />
 
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-
     <title>RealmYoke Games</title>
   </head>
-  <body class="font-poppins bg-slate-900">
+  <body class="font-poppins bg-zinc-950/[97%]">
     <nav
-      class="flex items-center justify-between w-full h-[70px] px-10 bg-slate-800"
+      class="flex items-center justify-between w-full h-24 px-10 bg-transparent"
     >
       <a href="#" class="object-cover bg-center w-32">
-        <img src="public/image/logo3transparan.png" alt="Logo RealmYoke" />
+        <img
+          src="src/assets/logo/logo3transparan.png"
+          alt="RealmYoke Games Logo"
+        />
       </a>
-      <div class="">
-        <span
-          class="flex items-center justify-between bg-slate-700 bg-opacity-70 rounded-md h-9 text-white"
+      <div
+        id="gameSearchBtn"
+        class="flex items-center justify-between w-1/2 h-12 pl-1 rounded-full transition duration-200 bg-white/10 text-white hover:bg-white/25 md:w-1/4 lg:w-1/3"
+      >
+        <svg
+          class="w-5 h-5 mx-3 text-white/50"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-search"
         >
-          <svg
-            class="mx-3 mt-1 text-white"
-            fill="currentColor"
-            xmlns="http://www.w3.org/2000/svg"
-            x="0px"
-            y="0px"
-            width="23"
-            height="23"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M 9 2 C 5.1458514 2 2 5.1458514 2 9 C 2 12.854149 5.1458514 16 9 16 C 10.747998 16 12.345009 15.348024 13.574219 14.28125 L 14 14.707031 L 14 16 L 20 22 L 22 20 L 16 14 L 14.707031 14 L 14.28125 13.574219 C 15.348024 12.345009 16 10.747998 16 9 C 16 5.1458514 12.854149 2 9 2 z M 9 4 C 11.773268 4 14 6.2267316 14 9 C 14 11.773268 11.773268 14 9 14 C 6.2267316 14 4 11.773268 4 9 C 4 6.2267316 6.2267316 4 9 4 z"
-            ></path>
-          </svg>
-          <input
-            id="inputNav"
-            spellcheck="false"
-            type="text"
-            class="w-full bg-transparent outline-none text-white"
-            placeholder="Cari di sini..."
-            autocomplete="off"
-          />
-          <svg
-            id="closeInputNav"
-            class="bi bi-x mx-1 mt-[1px] p-1 cursor-pointer bg-transparent rounded-md transition duration-200 hover:bg-slate-800"
-            xmlns="http://www.w3.org/2000/svg"
-            width="35"
-            height="30"
-            fill="currentColor"
-            viewBox="0 0 16 16"
-          >
-            <path
-              d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"
-            />
-          </svg>
-        </span>
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input
+          id="gameSearch"
+          spellcheck="false"
+          type="text"
+          class="w-full bg-transparent outline-none text-white"
+          placeholder="Search here..."
+          autocomplete="off"
+        />
       </div>
     </nav>
 
-    <section class="pt-5">
-      <div class="w-full px-5 flex items-center justify-between">
-        <h1 class="uppercase font-semibold text-2xl text-white">Populer</h1>
-        <span class="flex items-center justify-center gap-5">
-          <button
-            class="rounded-full text-white bg-amber-500 transition duration-100 hover:bg-amber-600"
-            id="scrollL"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 -960 960 960"
-              fill="currentColor"
-              class="w-8 h-8"
-            >
-              <path d="M560-280 360-480l200-200v400Z" />
-            </svg>
-          </button>
-
-          <button
-            class="rounded-full text-white bg-amber-500 transition duration-100 hover:bg-amber-600"
-            id="scrollR"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 -960 960 960"
-              fill="currentColor"
-              class="w-8 h-8"
-            >
-              <path d="M400-280v-400l200 200-200 200Z" />
-            </svg>
-          </button>
-        </span>
-      </div>
+    <section id="gameListSection" class="w-full px-7 py-8">
       <div
-        class="relative w-full flex items-center justify-center overflow-x-hidden p-5"
+        id="gameContainer"
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 text-white justify-items-center"
       >
-        <div
-          class="w-full py-1 flex items-center justify-start gap-8 overflow-x-scroll scrollbar-hidden snap-mandatory snap-x"
-          id="scrollContainer"
+        <a
+          href="public/html/ninja_gaiden_2_black.html"
+          class="gameList flex flex-col items-start justify-start max-w-[18rem] p-2 rounded border transition duration-100 border-gray-200/40 bg-white/5 hover:bg-white/10"
         >
-          <div class="popGame snap-center">
-            <a
-              href="public/html/dragon-age-the-veilguard.html"
-              class="w-52 h-80 flex items-center justify-center rounded text-white transition-all duration-150 hover:-translate-y-1"
-            >
-              <div class="relative w-full h-full">
-                <img
-                  src="src/image/dragon-age-the-veilguard-mobile-cover.jpg"
-                  alt=""
-                  class="w-full h-full object-cover object-top rounded"
-                />
-                <div
-                  class="absolute bottom-0 w-full px-3 py-4 gradient-card-desk"
-                >
-                  <span class="font-medium text-sm">
-                    <h1>Dragon Age The Veilguard</h1>
-                  </span>
-                  <span class="flex items-center justify-between mt-3">
-                    <div class=""></div>
-                    <div class="text-xs">
-                      <span class="py-1 px-2 rounded bg-gray-300 bg-opacity-20"
-                        >Free</span
-                      >
-                    </div>
-                  </span>
-                </div>
-              </div>
-            </a>
-          </div>
+          <img
+            class="w-full rounded-sm object-center object-cover"
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj1bx6SBCIZsiAdlKVrQzmU1YR__OsYNt_8rMPy7b5n43c594XEETsH0_7fDJG-7LGaYk1dr9dXRzMYTnjzRkOTjGOvbhokgIFfgG-xF30ACoHTcFSbA3cKmMKG7Bzq2xPIN75nAuNuzhLjJ2FzgeUcxCiwCNPwHmXxYlOGqmawK59ffxBhB6d6gGSVtN4/s460/ninja-gaiden-2-black-pc-cover.jpg"
+            alt="Ninja Gaiden 2 Black Cover"
+          />
+          <h3 class="mt-2 line-clamp-1 font-bold text-lg/snug">
+            Ninja Gaiden 2 Black
+          </h3>
+          <p class="my-1">Free</p>
+        </a>
 
-          <div class="popGame snap-center">
-            <a
-              href="public/html/dragon-age-the-veilguard.html"
-              class="w-52 h-80 flex items-center justify-center rounded text-white transition-all duration-150 hover:-translate-y-1"
-            >
-              <div class="relative w-full h-full">
-                <img
-                  src="src/image/wwe-2k24-mobile-cover.jpg"
-                  alt=""
-                  class="w-full h-full object-cover object-left rounded"
-                />
-                <div
-                  class="absolute bottom-0 w-full px-3 py-4 gradient-card-desk"
-                >
-                  <span class="font-medium text-sm">
-                    <h1>WWE 2k24</h1>
-                  </span>
-                  <span class="flex items-center justify-between mt-3">
-                    <div class=""></div>
-                    <div class="text-xs">
-                      <span class="py-1 px-2 rounded bg-gray-300 bg-opacity-20"
-                        >Free</span
-                      >
-                    </div>
-                  </span>
-                </div>
-              </div>
-            </a>
-          </div>
+        <a
+          href="#"
+          class="gameList flex flex-col items-start justify-start max-w-[18rem] p-2 rounded border transition duration-100 border-gray-200/40 bg-white/5 hover:bg-white/10"
+        >
+          <img
+            class="w-full rounded-sm object-center object-cover"
+            src="https://1.bp.blogspot.com/-9u49PuHhvq4/ZdbcDKWcLEI/AAAAAAABavA/W_5ozmGpwgIJ6HNT6C59p9hLfJvXEcriQCNcBGAsYHQ/s460/last-epoch-pc-cover.jpg"
+            alt="Last Epoch Cover"
+          />
+          <h3 class="mt-2 line-clamp-1 font-bold text-lg/snug">Last Epoch</h3>
+          <p class="my-1">Free</p>
+        </a>
 
-          <div class="popGame snap-center">
-            <a
-              href="public/html/dragon-age-the-veilguard.html"
-              class="w-52 h-80 flex items-center justify-center rounded text-white transition-all duration-150 hover:-translate-y-1"
-            >
-              <div class="relative w-full h-full">
-                <img
-                  src="src/image/dying-light-2-stay-human-pc-cover.jpg"
-                  alt=""
-                  class="w-full h-full object-cover object-center rounded"
-                />
-                <div
-                  class="absolute bottom-0 w-full px-3 py-4 gradient-card-desk"
-                >
-                  <span class="font-medium text-sm">
-                    <h1>Dying Light 2 Stay Human</h1>
-                  </span>
-                  <span class="flex items-center justify-between mt-3">
-                    <div class=""></div>
-                    <div class="text-xs">
-                      <span class="py-1 px-2 rounded bg-gray-300 bg-opacity-20"
-                        >Free</span
-                      >
-                    </div>
-                  </span>
-                </div>
-              </div>
-            </a>
-          </div>
+        <a
+          href="#"
+          class="gameList flex flex-col items-start justify-start max-w-[18rem] p-2 rounded border transition duration-100 border-gray-200/40 bg-white/5 hover:bg-white/10"
+        >
+          <img
+            class="w-full rounded-sm object-center object-cover"
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh8QJcESKeEGrd402L9Em9Qza-7INd6pivez59i1Axwp2Mbg98ZdB5m54Hb1agS7OZRMnImaxI15SssqbTm1OG_d5zUpNFyNzvDAKBMXQE0GTf2-p64iVVoxMgXwKeXeaJMh2XeG90PNImmMgV33BOlPuPYCPrlD3t__W0Mza2IZQECO8Tl7m5lfTU9Kr8/s460/god-of-war-ragnarok-pc-cover.jpg"
+            alt="God of War Ragnarok Cover"
+          />
+          <h3 class="mt-2 line-clamp-1 font-bold text-lg/snug">
+            God of War Ragnarok
+          </h3>
+          <p class="my-1">Free</p>
+        </a>
 
-          <div class="popGame snap-center">
-            <a
-              href="public/html/dragon-age-the-veilguard.html"
-              class="w-52 h-80 flex items-center justify-center rounded text-white transition-all duration-150 hover:-translate-y-1"
-            >
-              <div class="relative w-full h-full">
-                <img
-                  src="src/image/enotria-the-last-song-pc-cover.jpg"
-                  alt=""
-                  class="w-full h-full object-cover object-center rounded"
-                />
-                <div
-                  class="absolute bottom-0 w-full px-3 py-4 gradient-card-desk"
-                >
-                  <span class="font-medium text-sm">
-                    <h1>Enotria The Last Song</h1>
-                  </span>
-                  <span class="flex items-center justify-between mt-3">
-                    <div class=""></div>
-                    <div class="text-xs">
-                      <span class="py-1 px-2 rounded bg-gray-300 bg-opacity-20"
-                        >Free</span
-                      >
-                    </div>
-                  </span>
-                </div>
-              </div>
-            </a>
-          </div>
+        <a
+          href="#"
+          class="gameList flex flex-col items-start justify-start max-w-[18rem] p-2 rounded border transition duration-100 border-gray-200/40 bg-white/5 hover:bg-white/10"
+        >
+          <img
+            class="w-full rounded-sm object-center object-cover"
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhS3AC7jaKnSISJENiaiPui_GVUa5RNf4VlcwEDdijNmVwPDhYeu4yBqXuiz8ZdEYkudAgPBd3Ra4LdtPB86XRsO4RpaQHMPw2jPPmOq8bet3NwjvU0hH0iB71K5qoaJJZ7x1aj6Ujrz8UQLx1pwRXTkY5ZysxPLrHdEAa3EgfAWVWPXWYHQc_j3jzpplE/s460/assassins-creed-mirage-pc-cover.jpg"
+            alt="Assassins Creed Mirage Cover"
+          />
+          <h3 class="mt-2 line-clamp-1 font-bold text-lg/snug">
+            Assassins Creed Mirage
+          </h3>
+          <p class="my-1">Free</p>
+        </a>
 
-          <div class="popGame snap-center">
-            <a
-              href="public/html/dragon-age-the-veilguard.html"
-              class="w-52 h-80 flex items-center justify-center rounded text-white transition-all duration-150 hover:-translate-y-1"
-            >
-              <div class="relative w-full h-full">
-                <img
-                  src="src/image/crime-boss-rockay-city-pc-cover.jpg"
-                  alt=""
-                  class="w-full h-full object-cover object-center rounded"
-                />
-                <div
-                  class="absolute bottom-0 w-full px-3 py-4 gradient-card-desk"
-                >
-                  <span class="font-medium text-sm">
-                    <h1>Crime Bos Rockay City</h1>
-                  </span>
-                  <span class="flex items-center justify-between mt-3">
-                    <div class=""></div>
-                    <div class="text-xs">
-                      <span class="py-1 px-2 rounded bg-gray-300 bg-opacity-20"
-                        >Free</span
-                      >
-                    </div>
-                  </span>
-                </div>
-              </div>
-            </a>
-          </div>
+        <a
+          href="#"
+          class="gameList flex flex-col items-start justify-start max-w-[18rem] p-2 rounded border transition duration-100 border-gray-200/40 bg-white/5 hover:bg-white/10"
+        >
+          <img
+            class="w-full rounded-sm object-center object-cover"
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg1qVlNY1wvbwCZZwxjC_KulmuTUMQnV0ttwqgcfucUwlRoPLhPFJDYt2hemsWmsuEJCMYlsgmhogqFMn9LKxNlUbg95xbGMR92SOGcbQshNGkvapNmW08ubZnriQa25PnngF2Nu0DhxBxzYYGf1_E_XIM6urznykvTlpJxQapR228z45c63VGsuWKRaI8/s460/dynasty-warriors-origins-pc-cover.jpg"
+            alt="Dynasty Warriors Origins Cover"
+          />
+          <h3 class="mt-2 line-clamp-1 font-bold text-lg/snug">
+            Dynasty Warriors Origins
+          </h3>
+          <p class="my-1">Free</p>
+        </a>
 
-          <div class="popGame snap-center">
-            <a
-              href="public/html/dragon-age-the-veilguard.html"
-              class="w-52 h-80 flex items-center justify-center rounded text-white transition-all duration-150 hover:-translate-y-1"
-            >
-              <div class="relative w-full h-full">
-                <img
-                  src="src/image/carx-street-pc-cover.jpg"
-                  alt=""
-                  class="w-full h-full object-cover object-center rounded"
-                />
-                <div
-                  class="absolute bottom-0 w-full px-3 py-4 gradient-card-desk"
-                >
-                  <span class="font-medium text-sm">
-                    <h1>Carx Street PC</h1>
-                  </span>
-                  <span class="flex items-center justify-between mt-3">
-                    <div></div>
-                    <div class="text-xs">
-                      <span class="py-1 px-2 rounded bg-gray-300 bg-opacity-20"
-                        >Free</span
-                      >
-                    </div>
-                  </span>
-                </div>
-              </div>
-            </a>
-          </div>
+        <a
+          href="#"
+          class="gameList flex flex-col items-start justify-start max-w-[18rem] p-2 rounded border transition duration-100 border-gray-200/40 bg-white/5 hover:bg-white/10"
+        >
+          <img
+            class="w-full rounded-sm object-center object-cover"
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhi2jLHK46R6EESL3VxNxCYp0QWXgFX2VslOEOu-TWAnZj0lLkxQBFFrzahzhx2g30KZeCcCk_gA1mWZotIpxk9UwHCYFqDvsuOn1NMNIaH4MGATdLZM2ge_XXwfNO67VDpk_-9uWDpncvIqDTBnKXIsXRzY5pfPciX_tL6qfUaYzeEvleeeZFsBf7mCRo/s460/final-fantasy-vii-rebirth-pc-cover.jpg"
+            alt="Final Fantasy VII Rebirth Cover"
+          />
+          <h3 class="mt-2 line-clamp-1 font-bold text-lg/snug">
+            Final Fantasy VII Rebirth
+          </h3>
+          <p class="my-1">Free</p>
+        </a>
 
-          <div class="popGame snap-center">
-            <a
-              href="public/html/dragon-age-the-veilguard.html"
-              class="w-52 h-80 flex items-center justify-center rounded text-white transition-all duration-150 hover:-translate-y-1"
-            >
-              <div class="relative w-full h-full">
-                <img
-                  src="src/image/armored-core-6-fires-of-rubicon-deluxe-pc-cover.jpg"
-                  alt=""
-                  class="w-full h-full object-cover object-center rounded"
-                />
-                <div
-                  class="absolute bottom-0 w-full px-3 py-4 gradient-card-desk"
-                >
-                  <span class="font-medium text-sm">
-                    <h1>Armored Core 6 Fires of Rubicon</h1>
-                  </span>
-                  <span class="flex items-center justify-between mt-3">
-                    <div></div>
-                    <div class="text-xs">
-                      <span class="py-1 px-2 rounded bg-gray-300 bg-opacity-20"
-                        >Free</span
-                      >
-                    </div>
-                  </span>
-                </div>
-              </div>
-            </a>
-          </div>
+        <a
+          href="#"
+          class="gameList flex flex-col items-start justify-start max-w-[18rem] p-2 rounded border transition duration-100 border-gray-200/40 bg-white/5 hover:bg-white/10"
+        >
+          <img
+            class="w-full rounded-sm object-center object-cover"
+            src="https://1.bp.blogspot.com/-c2nRSi5Scrw/YyGHwtOEfwI/AAAAAAABTgs/9at2pGx45TwTFFMht1OvVoc5gOEzc8dbwCNcBGAsYHQ/s460/isonzo-pc-cover.jpg"
+            alt="Isonzo Cover"
+          />
+          <h3 class="mt-2 line-clamp-1 font-bold text-lg/snug">Isonzo</h3>
+          <p class="my-1">Free</p>
+        </a>
 
-          <div class="popGame snap-center">
-            <a
-              href="public/html/dragon-age-the-veilguard.html"
-              class="w-52 h-80 flex items-center justify-center rounded text-white transition-all duration-150 hover:-translate-y-1"
-            >
-              <div class="relative w-full h-full">
-                <img
-                  src="src/image/horizon-zero-dawn-remastered-pc-cover.jpg"
-                  alt=""
-                  class="w-full h-full object-cover object-center rounded"
-                />
-                <div
-                  class="absolute bottom-0 w-full px-3 py-4 gradient-card-desk"
-                >
-                  <span class="font-medium text-sm">
-                    <h1>Horizon Zero Dawn Remastered</h1>
-                  </span>
-                  <span class="flex items-center justify-between mt-3">
-                    <div></div>
-                    <div class="text-xs">
-                      <span class="py-1 px-2 rounded bg-gray-300 bg-opacity-20"
-                        >Free</span
-                      >
-                    </div>
-                  </span>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
+        <a
+          href="#"
+          class="gameList flex flex-col items-start justify-start max-w-[18rem] p-2 rounded border transition duration-100 border-gray-200/40 bg-white/5 hover:bg-white/10"
+        >
+          <img
+            class="w-full rounded-sm object-center object-cover"
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiDLqnbIzb_cVoI39_DbEsoL0w6kssju2KJr60iLYR4-AKGzdoryN2vFT_wTkXpSogJPhS1frNhJtokApcspr9JsRRzOVgtKJ_PHt0LCPawEGogW66ea98dq2LqYTLQRZSsUk-Ub9GhrCkFwrSx3CdONQS4oI1CCG1tplD23ZuxPPOOXZzWwj1EfHkJ2kY/s460/age-of-darkness-final-stand-pc-cover.jpg"
+            alt="Age of Darkness Final Stand Cover"
+          />
+          <h3 class="mt-2 line-clamp-1 font-bold text-lg/snug">
+            Age of Darkness Final Stand
+          </h3>
+          <p class="my-1">Free</p>
+        </a>
+
+        <a
+          href="#"
+          class="gameList flex flex-col items-start justify-start max-w-[18rem] p-2 rounded border transition duration-100 border-gray-200/40 bg-white/5 hover:bg-white/10"
+        >
+          <img
+            class="w-full rounded-sm object-center object-cover"
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjBO7cy0yw4teE4m8BzVsMAxS7nzmQm7kKtfdJlsssfDXxMkgjg3f8vKp6_xQ1m3gnUZNN2YlszG8NITGnVkTynRjTlhlteFMIIS5PHsFTinYX8KBxK9L4CKUDXkyLj4ybGoyE97C6n5JztBQu_nhPyItoAKGtBjQDZZR1x_tu13iXdW3yZXVOAucCAPIM/s460/dragon-age-the-veilguard-pc-cover.jpg"
+            alt="Dragon Age The Veilguard Cover"
+          />
+          <h3 class="mt-2 line-clamp-1 font-bold text-lg/snug">
+            Dragon Age The Veilguard
+          </h3>
+          <p class="my-1">Free</p>
+        </a>
+
+        <a
+          href="#"
+          class="gameList flex flex-col items-start justify-start max-w-[18rem] p-2 rounded border transition duration-100 border-gray-200/40 bg-white/5 hover:bg-white/10"
+        >
+          <img
+            class="w-full rounded-sm object-center object-cover"
+            src="https://1.bp.blogspot.com/-5eYIK5bKiGk/ZSnuRK31ljI/AAAAAAABZd8/af-MZvAv-3sV-LHJYe_hKYSoaNTnpRFUwCNcBGAsYHQ/s460/lords-of-the-fallen-pc-cover.jpg"
+            alt="Lords of the Fallen Cover"
+          />
+          <h3 class="mt-2 line-clamp-1 font-bold text-lg/snug">
+            Lords of the Fallen
+          </h3>
+          <p class="my-1">Free</p>
+        </a>
+
+        <a
+          href="#"
+          class="gameList flex flex-col items-start justify-start max-w-[18rem] p-2 rounded border transition duration-100 border-gray-200/40 bg-white/5 hover:bg-white/10"
+        >
+          <img
+            class="w-full rounded-sm object-center object-cover"
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEj2toQUoROV3AeMrYTJr3-noJignl2qWoYDGeSEmX3hxPgqe5p0X3mM8LTjrBXo3xod9YG5s31AKU5vrBouhAzYLcolaE8DEX_g1wv1nRn9TDflB2rPhn76rX2r47EjSsRNNJ7FHVO8lLiIm-mAZBKbuVgZ0mte3OAqctmQsy3JVen4QkpE6njfFlIwljw"
+            alt="Cities Skylines II Ultimate Edition Cover"
+          />
+          <h3 class="mt-2 line-clamp-1 font-bold text-lg/snug">
+            Cities Skylines II Ultimate Edition
+          </h3>
+          <p class="my-1">Free</p>
+        </a>
+
+        <a
+          href="#"
+          class="gameList flex flex-col items-start justify-start max-w-[18rem] p-2 rounded border transition duration-100 border-gray-200/40 bg-white/5 hover:bg-white/10"
+        >
+          <img
+            class="w-full rounded-sm object-center object-cover"
+            src="https://1.bp.blogspot.com/-bOnlWO1-Dr0/YRTAcMG2-mI/AAAAAAABNFI/aJpvIiBEgs0UGjmfqKE1bRRO3nmKKksqACLcBGAsYHQ/s460/car-mechanic-simulator-2021-pc-cover.jpg"
+            alt="Car Mechanic Simulator 2021 Cover"
+          />
+          <h3 class="mt-2 line-clamp-1 font-bold text-lg/snug">
+            Car Mechanic Simulator 2021
+          </h3>
+          <p class="my-1">Free</p>
+        </a>
+
+        <a
+          href="#"
+          class="gameList flex flex-col items-start justify-start max-w-[18rem] p-2 rounded border transition duration-100 border-gray-200/40 bg-white/5 hover:bg-white/10"
+        >
+          <img
+            class="w-full rounded-sm object-center object-cover"
+            src="https://1.bp.blogspot.com/-rTiEtY7XuJM/Y8mov2mLlrI/AAAAAAABVW8/XQ0Y3EewR8s0MioE9RZW43AB9sbB3EALwCNcBGAsYHQ/s460/the-sims-4-pc-cover.jpg"
+            alt="The Sims 4 Cover"
+          />
+          <h3 class="mt-2 line-clamp-1 font-bold text-lg/snug">The Sims 4</h3>
+          <p class="my-1">Free</p>
+        </a>
+
+        <a
+          href="#"
+          class="gameList flex flex-col items-start justify-start max-w-[18rem] p-2 rounded border transition duration-100 border-gray-200/40 bg-white/5 hover:bg-white/10"
+        >
+          <img
+            class="w-full rounded-sm object-center object-cover"
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhaVriBOrHh8s9t_QsRf88PTZCNo7QsdrYrRVy_pzPj8ni0keUxjdiezrU1Q7Ki9EN1ay6jvoEynDFLoUESc4zAtPBbUHadO0eDypoZlI2YPpTVmb9Frdo_jVJ8NtsNG0ygAwevsDX_BLyxs747u8MIIHXY8rodAlgKxlLMY3U75q2UB5ylJHutEGTKyvI/s460/motel-manager-pc-cover.jpg"
+            alt="Motel Manager Simulator Cover"
+          />
+          <h3 class="mt-2 line-clamp-1 font-bold text-lg/snug">
+            Motel Manager Simulator
+          </h3>
+          <p class="my-1">Free</p>
+        </a>
+
+        <a
+          href="#"
+          class="gameList flex flex-col items-start justify-start max-w-[18rem] p-2 rounded border transition duration-100 border-gray-200/40 bg-white/5 hover:bg-white/10"
+        >
+          <img
+            class="w-full rounded-sm object-center object-cover"
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgN-uE6bxEqmR9v_TByhyphenhyphen8B2gunc0LsjxXLkROfUMHoJ25CKnB-06RmfzRvJcf0m-MfSjbnR4Nb2WSnHDt38pO58v7CkauYznu72TWBJssKR-6FC2eXH8NeHowDX7Kf6_hsN_mnB77AJfNIr1R0-2DEFnhzjxmpqkA1t_93T46JV8MHV_VNxudMBBZ1Ea0/s460/dragon-ball-sparking-zero-pc-cover.jpg"
+            alt="Dragon Ball Sparking ZERO Cover"
+          />
+          <h3 class="mt-2 line-clamp-1 font-bold text-lg/snug">
+            Dragon Ball Sparking ZERO
+          </h3>
+          <p class="my-1">Free</p>
+        </a>
+
+        <a
+          href="#"
+          class="gameList flex flex-col items-start justify-start max-w-[18rem] p-2 rounded border transition duration-100 border-gray-200/40 bg-white/5 hover:bg-white/10"
+        >
+          <img
+            class="w-full rounded-sm object-center object-cover"
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEivjNsdB7lqAYa4dhOqlWft7szoXMhFHDCxpIq0TN4Rfh7WISrzP_KOCQdIYV3voB8r_aKN7ppV4HoaiWoWn-1tsV_rnR_d5qO5aMXtGnbs3We2vh_Kw2JXT3FEEDuZO7KJIw-3Frq-wbl3dfX52hsQtvhnGU_vrFVXcq1JDZJJ5E6yhXxu9O1wa86YgTA/s460/gundam-breaker-4-pc-cover.jpg"
+            alt="Gundam Breaker 4 Cover"
+          />
+          <h3 class="mt-2 line-clamp-1 font-bold text-lg/snug">
+            Gundam Breaker 4
+          </h3>
+          <p class="my-1">Free</p>
+        </a>
+
+        <a
+          href="#"
+          class="gameList flex flex-col items-start justify-start max-w-[18rem] p-2 rounded border transition duration-100 border-gray-200/40 bg-white/5 hover:bg-white/10"
+        >
+          <img
+            class="w-full rounded-sm object-center object-cover"
+            src="https://1.bp.blogspot.com/-MbKdGiJ7fsI/ZdgZSdf2CRI/AAAAAAABawI/UH_uF4FlGaorPWsFRquhhes3HkG5d257gCNcBGAsYHQ/s460/sons-of-the-forest-pc-cover.jpg"
+            alt="Sons of the Forest Cover"
+          />
+          <h3 class="mt-2 line-clamp-1 font-bold text-lg/snug">
+            Sons of the Forest
+          </h3>
+          <p class="my-1">Free</p>
+        </a>
+
+        <a
+          href="#"
+          class="gameList flex flex-col items-start justify-start max-w-[18rem] p-2 rounded border transition duration-100 border-gray-200/40 bg-white/5 hover:bg-white/10"
+        >
+          <img
+            class="w-full rounded-sm object-center object-cover"
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgEvDgvQhAZoJ3_VZtG57DHr7Jh4z1Kr6iBI3LjKOVwz5NND_54IShF0gPdes1J8CNkxhCC8dAzFSweugzSiJoMXIq5EQ78ZnZ9_xOnOac50sP0te8MCFgGnQR3nIG7TqK8Kd23FurPA9oLpxnbPNU2v5zRo0XN5OIVDojAIlnN4wD0CmY-692LdNImkss/s460/builders-of-egypt-pc-cover.jpg"
+            alt="Builders of Egypt Cover"
+          />
+          <h3 class="mt-2 line-clamp-1 font-bold text-lg/snug">
+            Builders of Egypt
+          </h3>
+          <p class="my-1">Free</p>
+        </a>
+
+        <a
+          href="#"
+          class="gameList flex flex-col items-start justify-start max-w-[18rem] p-2 rounded border transition duration-100 border-gray-200/40 bg-white/5 hover:bg-white/10"
+        >
+          <img
+            class="w-full rounded-sm object-center object-cover"
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiDe3TGh2Sworyre10lYNXZoKhZwUaOOeKkQVPACM5QlziEjMgEAUSEKsIDW_oToSi7GcrNgLdQRVlvWwq0aHb0xGOd5-qEwhzbN64HCwQ-B9h9YKHx519PJllBqAHLrt4Tz4Lqgs-hMuBtYJGqrTs9sFeP6jeBoA_P-g_NsEWaBIqJl1FTX9ZUpgE_dxU/s460/songs-of-conquest-pc-cover.jpg"
+            alt="Songs of Conquest Cover"
+          />
+          <h3 class="mt-2 line-clamp-1 font-bold text-lg/snug">
+            Songs of Conquest
+          </h3>
+          <p class="my-1">Free</p>
+        </a>
+
+        <a
+          href="#"
+          class="gameList flex flex-col items-start justify-start max-w-[18rem] p-2 rounded border transition duration-100 border-gray-200/40 bg-white/5 hover:bg-white/10"
+        >
+          <img
+            class="w-full rounded-sm object-center object-cover"
+            src="https://1.bp.blogspot.com/-Z_WHz-4HWDQ/ZDk3OE7nOkI/AAAAAAABWuI/p6aneSC06gQYRInj2rw0ClBxEY91JznFgCNcBGAsYHQ/s460/assassins-creed-valhalla-pc-cover.jpg"
+            alt="Assassins Creed Valhalla Cover"
+          />
+          <h3 class="mt-2 line-clamp-1 font-bold text-lg/snug">
+            Assassins Creed Valhalla
+          </h3>
+          <p class="my-1">Free</p>
+        </a>
+
+        <a
+          href="#"
+          class="gameList flex flex-col items-start justify-start max-w-[18rem] p-2 rounded border transition duration-100 border-gray-200/40 bg-white/5 hover:bg-white/10"
+        >
+          <img
+            class="w-full rounded-sm object-center object-cover"
+            src="https://1.bp.blogspot.com/-_K06tNOjS0I/ZGAyBTHRnXI/AAAAAAABXGA/6OWTeFBLD202_F60Rk7-c18mzD-HjWuRACNcBGAsYHQ/s460/resident-evil-4-pc-cover.jpg"
+            alt="Resident Evil 4 2023 Remake Cover"
+          />
+          <h3 class="mt-2 line-clamp-1 font-bold text-lg/snug">
+            Resident Evil 4 2023 Remake
+          </h3>
+          <p class="my-1">Free</p>
+        </a>
+
+        <a
+          href="#"
+          class="gameList flex flex-col items-start justify-start max-w-[18rem] p-2 rounded border transition duration-100 border-gray-200/40 bg-white/5 hover:bg-white/10"
+        >
+          <img
+            class="w-full rounded-sm object-center object-cover"
+            src="https://1.bp.blogspot.com/-17heQiY_R8A/Y-Ym-CHD3LI/AAAAAAABV4U/2-iOHL5LSLoGUKuqUgbYLAXMidq1ZPgxACNcBGAsYHQ/s460/hogwarts-legacy-pc-cover.jpg"
+            alt="Hogwarts Legacy Cover"
+          />
+          <h3 class="mt-2 line-clamp-1 font-bold text-lg/snug">
+            Hogwarts Legacy
+          </h3>
+          <p class="my-1">Free</p>
+        </a>
+
+        <a
+          href="#"
+          class="gameList flex flex-col items-start justify-start max-w-[18rem] p-2 rounded border transition duration-100 border-gray-200/40 bg-white/5 hover:bg-white/10"
+        >
+          <img
+            class="w-full rounded-sm object-center object-cover"
+            src="https://1.bp.blogspot.com/-JvqqsadvG7Y/ZFFJvqjuLrI/AAAAAAABW7w/J87nnXBfdE0oK5ZpzbvuBx_wr86sf_orwCNcBGAsYHQ/s460/age-of-wonder-4-premium-edition-pc-cover.jpg"
+            alt="Age of Wonders 4 Premium Edition Cover"
+          />
+          <h3 class="mt-2 line-clamp-1 font-bold text-lg/snug">
+            Age of Wonders 4 Premium Edition
+          </h3>
+          <p class="my-1">Free</p>
+        </a>
+
+        <a
+          href="#"
+          class="gameList flex flex-col items-start justify-start max-w-[18rem] p-2 rounded border transition duration-100 border-gray-200/40 bg-white/5 hover:bg-white/10"
+        >
+          <img
+            class="w-full rounded-sm object-center object-cover"
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj1giSXjLLbNye_tdhwrI-zm60UYrCUIipOz3iyI_P3Tr1z2a8JOVSBF3MDIrzofvY6bkEqbghayeSBf0U5cKBXn8yrP9jiblJd9iF0awsN-ID7LmW8Hk1Qp-eGOr-58X1dA_eSZvJCEy4Md_wjC-tk6hOqSpdne0M_7GO9B7c5g-bihjnlaiBwLOTxXJs/s460/star-trucker-pc-cover.jpg"
+            alt="Star Trucker Cover"
+          />
+          <h3 class="mt-2 line-clamp-1 font-bold text-lg/snug">Star Trucker</h3>
+          <p class="my-1">Free</p>
+        </a>
+
+        <a
+          href="#"
+          class="gameList flex flex-col items-start justify-start max-w-[18rem] p-2 rounded border transition duration-100 border-gray-200/40 bg-white/5 hover:bg-white/10"
+        >
+          <img
+            class="w-full rounded-sm object-center object-cover"
+            src="https://1.bp.blogspot.com/-p9HmaJqcIoM/ZLNhHpyuIpI/AAAAAAABYUY/4erCqd-FbW0elQEXWDpG27Xd9eabI72_ACNcBGAsYHQ/s460/dead-island-2-pc-cover.jpg"
+            alt="Dead Island 2 Gold Edition Cover"
+          />
+          <h3 class="mt-2 line-clamp-1 font-bold text-lg/snug">
+            Dead Island 2 Gold Edition
+          </h3>
+          <p class="my-1">Free</p>
+        </a>
+
+        <a
+          href="#"
+          class="gameList flex flex-col items-start justify-start max-w-[18rem] p-2 rounded border transition duration-100 border-gray-200/40 bg-white/5 hover:bg-white/10"
+        >
+          <img
+            class="w-full rounded-sm object-center object-cover"
+            src="https://1.bp.blogspot.com/-py4RH-30zNE/ZNrpyLrmKpI/AAAAAAABYmY/bKfIQOj3M6c5kglqIs45wVQv5iOqUHzmQCNcBGAsYHQ/s460/judgment-pc-cover.jpg"
+            alt="Judgment Cover"
+          />
+          <h3 class="mt-2 line-clamp-1 font-bold text-lg/snug">Judgment</h3>
+          <p class="my-1">Free</p>
+        </a>
+
+        <a
+          href="#"
+          class="gameList flex flex-col items-start justify-start max-w-[18rem] p-2 rounded border transition duration-100 border-gray-200/40 bg-white/5 hover:bg-white/10"
+        >
+          <img
+            class="w-full rounded-sm object-center object-cover"
+            src="https://1.bp.blogspot.com/-laaT5INvRdU/Y2b4lmjINKI/AAAAAAABUT4/3mrs9hZDEfUd7WIhr12r5ltYut97edQlwCNcBGAsYHQ/s460/dragon-ball-fighterz-pc-cover.jpg"
+            alt="Dragon Ball FighterZ Cover"
+          />
+          <h3 class="mt-2 line-clamp-1 font-bold text-lg/snug">
+            Dragon Ball FighterZ
+          </h3>
+          <p class="my-1">Free</p>
+        </a>
+
+        <a
+          href="#"
+          class="gameList flex flex-col items-start justify-start max-w-[18rem] p-2 rounded border transition duration-100 border-gray-200/40 bg-white/5 hover:bg-white/10"
+        >
+          <img
+            class="w-full rounded-sm object-center object-cover"
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg_bNuXbi4T0NMNQIjOUHtY-4nEB0jyBsXh8-KuZ94lWRT5mOSREjCJc84JZBV7zeVDwzVU7itocgBYl_-dhEmDzcMrvm2b40ozMzcSF-kn_qTLx0MSvOn7SNxTsA56yAqcj0lYXySC42kocWPf8hTg5-ZmgDvjvCBIIhhhnBnXbkwTw_SPIMsn1G9uR54/s460/taxi-life-a-city-driving-simulator-pc-cover.jpg"
+            alt="Taxi Life A City Driving Simulator Cover"
+          />
+          <h3 class="mt-2 line-clamp-1 font-bold text-lg/snug">
+            Taxi Life A City Driving Simulator
+          </h3>
+          <p class="my-1">Free</p>
+        </a>
+
+        <a
+          href="#"
+          class="gameList flex flex-col items-start justify-start max-w-[18rem] p-2 rounded border transition duration-100 border-gray-200/40 bg-white/5 hover:bg-white/10"
+        >
+          <img
+            class="w-full rounded-sm object-center object-cover"
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhVodUGUUKY_yKxgfofJe-j1nQv00t9Z3rcXH-J7v4hcmQoUgcvrpNsqQhEV4XeNENjmU7cIJL0A9YHcgjYkdEH9I-3Utdv_bbwWYyZbJ-Uhqqaz_ET-HIcwp2H2YekGhujmIBHxfpuRdoLBQ_5U_fWsQ2S9JBBySF52RVF4BakmktiOQk88rtUmVnS-ac/s460/gunsmith-simulator-pc-cover.jpg"
+            alt="Gunsmith Simulator Cover"
+          />
+          <h3 class="mt-2 line-clamp-1 font-bold text-lg/snug">
+            Gunsmith Simulator
+          </h3>
+          <p class="my-1">Free</p>
+        </a>
+
+        <a
+          href="#"
+          class="gameList flex flex-col items-start justify-start max-w-[18rem] p-2 rounded border transition duration-100 border-gray-200/40 bg-white/5 hover:bg-white/10"
+        >
+          <img
+            class="w-full rounded-sm object-center object-cover"
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEihvnC_JtzoLfmNWNtd1mlloJumrUVUyIoWffRiRTav8hcvKTnyj0nJ5epXOCRyFSOB778NqH314hIEYskCqgm-dcZC_4v_2W6WNzMkQnu4OgyGiwehfoDPDzFIN1UZEQ4JUe4x7yAZv41Hs-DYWBBosu6mTy7owJQhpegKMkET94lLGhJMBb3wemCJp3U/s460/red-dead-redemption-pc-cover.jpg"
+            alt="Red Dead Redemption Cover"
+          />
+          <h3 class="mt-2 line-clamp-1 font-bold text-lg/snug">
+            Red Dead Redemption
+          </h3>
+          <p class="my-1">Free</p>
+        </a>
+
+        <a
+          href="#"
+          class="gameList flex flex-col items-start justify-start max-w-[18rem] p-2 rounded border transition duration-100 border-gray-200/40 bg-white/5 hover:bg-white/10"
+        >
+          <img
+            class="w-full rounded-sm object-center object-cover"
+            src="https://1.bp.blogspot.com/-OtS2DR01j50/Ysn3dw99e0I/AAAAAAAABJk/OZKBCkItkK01Jy061oETCyt3PUuAfwoTQCNcBGAsYHQ/s460/icarus-pc-cover.jpg"
+            alt="Icarus Cover"
+          />
+          <h3 class="mt-2 line-clamp-1 font-bold text-lg/snug">Icarus</h3>
+          <p class="my-1">Free</p>
+        </a>
+
+        <a
+          href="#"
+          class="gameList flex flex-col items-start justify-start max-w-[18rem] p-2 rounded border transition duration-100 border-gray-200/40 bg-white/5 hover:bg-white/10"
+        >
+          <img
+            class="w-full rounded-sm object-center object-cover"
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjiFOJbEN1d0MTM0l5jASsS36dGKSJ5DewEqfojxIfTcpwZ_zDiSYBArUmkfz9qFIx0pngMIcMguT0xAichRpyIuD5mz3RQmKdswIauptnG8Gw5WDE1V1I9I0jT7PBaMP1PstdGpWLFrL6CbLxn1gndW381g8c3bIR8LLX4uookONjfjxoII3eK-blGzmk/s460/dread-dawn-pc-cover.jpg"
+            alt="Dread Dawn Cover"
+          />
+          <h3 class="mt-2 line-clamp-1 font-bold text-lg/snug">Dread Dawn</h3>
+          <p class="my-1">Free</p>
+        </a>
+
+        <a
+          href="#"
+          class="gameList flex flex-col items-start justify-start max-w-[18rem] p-2 rounded border transition duration-100 border-gray-200/40 bg-white/5 hover:bg-white/10"
+        >
+          <img
+            class="w-full rounded-sm object-center object-cover"
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj0b0N3gp28pvpxHEGfDiGjsLkoXBtKccfpixci5ZkMhyphenhyphenabsWWJ82Pf_JdRV4fNQPNhyphenhyphenK_husA25ulktczVuuyIvvw6VHBcac-YmneNLuBoYuDaAqnE16T1ddm78OJEpGlHkh18mhdj64lRBH7Zqoe_ytN9fVWubtSN1tyM7xejewcSx1y-9Ou93MmkadY/s460/workers-and-resources-soviet-republic-pc-cover.jpg"
+            alt="Workers and Resources Soviet Republic Cover"
+          />
+          <h3 class="mt-2 line-clamp-1 font-bold text-lg/snug">
+            Workers and Resources Soviet Republic
+          </h3>
+          <p class="my-1">Free</p>
+        </a>
+
+        <a
+          href="#"
+          class="gameList flex flex-col items-start justify-start max-w-[18rem] p-2 rounded border transition duration-100 border-gray-200/40 bg-white/5 hover:bg-white/10"
+        >
+          <img
+            class="w-full rounded-sm object-center object-cover"
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgjL4A4FYEdGcjSHy1FxXN6mP8zFFB-qsl-B04u0V2TclB7-og7olgZj2CeX-fHMoYA7BSRAgY91eBgi1pQoxxy9H6PukQ00jQNomWe6_rd67lSBqhbBfG85i7mOBOp6nlwfrTbBMNICwQKnx_mqtt_0cEu1nhMvLDjxymrwQKIFeIEUxTRa4gFzydpuQU/s460/until-dawn-pc-cover.jpg"
+            alt="Until Dawn Cover"
+          />
+          <h3 class="mt-2 line-clamp-1 font-bold text-lg/snug">Until Dawn</h3>
+          <p class="my-1">Free</p>
+        </a>
+
+        <a
+          href="#"
+          class="gameList flex flex-col items-start justify-start max-w-[18rem] p-2 rounded border transition duration-100 border-gray-200/40 bg-white/5 hover:bg-white/10"
+        >
+          <img
+            class="w-full rounded-sm object-center object-cover"
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiwUmbS-QQDX_niWR3nDhto9WmDLCS54iFoQeBHHZv5NoWt-tAgLUdAQtoR8MZStePDqfOZnZfbAzaSAX3CrFNlxKVFmBAd21QOg8CWgKaIadSjHQMx_HNlVtT-chdOUzUeqgQGFGRIsFWlHjeUawQK0SQLYZ8WXP2M2BPDpkH9BgXYvvdMiKk_MhRh_cI/s460/sins-of-a-solar-empire-2-pc-cover.jpg"
+            alt="Sins of a Solar Empire II Cover"
+          />
+          <h3 class="mt-2 line-clamp-1 font-bold text-lg/snug">
+            Sins of a Solar Empire II
+          </h3>
+          <p class="my-1">Free</p>
+        </a>
+
+        <a
+          href="#"
+          class="gameList flex flex-col items-start justify-start max-w-[18rem] p-2 rounded border transition duration-100 border-gray-200/40 bg-white/5 hover:bg-white/10"
+        >
+          <img
+            class="w-full rounded-sm object-center object-cover"
+            src="https://1.bp.blogspot.com/-fpWPH3_jwXM/ZmlCHNiKEiI/AAAAAAABc0E/OTWOQtLshe0F9-DOQJ2Q4awNbmFHR9iKACNcBGAsYHQ/s460/empires-of-the-undergrowth-pc-cover.jpg"
+            alt="Empires of the Undergrowth Cover"
+          />
+          <h3 class="mt-2 line-clamp-1 font-bold text-lg/snug">
+            Empires of the Undergrowth
+          </h3>
+          <p class="my-1">Free</p>
+        </a>
       </div>
-      <div class="w-full">
-        <h1
-          id="noneGame"
-          class="w-full hidden items-center justify-center text-white"
-        >
-          Tidak ada game yang ditemukan
-        </h1>
+
+      <div
+        id="pagination"
+        class="flex justify-center items-center space-x-1 mt-14 text-slate-400"
+      >
+        <span id="pageInfo"></span>
       </div>
     </section>
 
-    <script src="public/js/main.js"></script>
+    <section
+      id="gameNone"
+      class="hidden w-full h-[70vh] italic text-center text-white/50"
+    >
+      <h1>No games found</h1>
+    </section>
+
+    <footer class="w-[95%] mx-auto py-5 mt-5 border-t border-gray-300">
+      <span
+        class="block text-xs text-center text-gray-500 dark:text-gray-400 md:text-sm"
+        >© 2025 <a href="#" class="hover:underline">WarungPojok™</a>. All Rights
+        Reserved.</span
+      >
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // DOM Elements
+        const gameSearchBtn = document.getElementById("gameSearchBtn");
+        const gameSearch = document.getElementById("gameSearch");
+        const gameContainer = document.getElementById("gameContainer");
+        const pagination = document.getElementById("pagination");
+        const gameNone = document.getElementById("gameNone");
+
+        // Event Listeners
+        gameSearchBtn.addEventListener("click", () => {
+          gameSearch.focus();
+        });
+
+        gameSearch.addEventListener("input", (e) => {
+          CONFIG.searchTerm = e.target.value.toLowerCase().trim();
+          CONFIG.currentPage = 1; // Reset to first page on new search
+          renderGames();
+          scrollToTop(); // Scroll to top when navigating pages
+        });
+
+        // Configuration
+        const CONFIG = {
+          gamesPerPage: 12,
+          currentPage: 1,
+          searchTerm: "",
+        };
+
+        // Utility Functions
+        const getVisibleGameItems = () => {
+          const allGameItems = gameContainer.querySelectorAll(".gameList");
+          return Array.from(allGameItems).filter((game) => {
+            const gameName = game.querySelector("h3").textContent.toLowerCase();
+            return gameName.includes(CONFIG.searchTerm);
+          });
+        };
+
+        const scrollToTop = () => {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth", // Smooth scroll effect
+          });
+        };
+
+        const renderGames = () => {
+          const visibleGames = getVisibleGameItems();
+          const totalPages = Math.ceil(
+            visibleGames.length / CONFIG.gamesPerPage
+          );
+
+          // Hide all games first
+          gameContainer.querySelectorAll(".gameList").forEach((game) => {
+            game.style.display = "none";
+          });
+
+          // Calculate start and end indices
+          const startIndex = (CONFIG.currentPage - 1) * CONFIG.gamesPerPage;
+          const endIndex = startIndex + CONFIG.gamesPerPage;
+
+          // Show games for current page
+          visibleGames.slice(startIndex, endIndex).forEach((game) => {
+            game.style.display = "flex";
+          });
+
+          // Render Pagination
+          renderPagination(totalPages);
+
+          // Toggle 'No Games Found' message
+          if (visibleGames.length === 0) {
+            gameNone.classList.remove("hidden");
+            pagination.classList.remove("flex");
+            pagination.classList.add("hidden");
+          } else {
+            gameNone.classList.add("hidden");
+            pagination.classList.add("flex");
+            pagination.classList.remove("hidden");
+          }
+        };
+
+        const renderPagination = (totalPages) => {
+          pagination.innerHTML = ""; // Clear previous pagination
+
+          const createButton = (text, isActive = false) => {
+            const btn = document.createElement("button");
+            btn.textContent = text;
+            btn.className =
+              "px-4 py-2 cursor-pointer rounded " +
+              (isActive
+                ? "border border-white transition duration-100 text-white hover:bg-slate-100/15"
+                : "transition duration-100 text-white hover:bg-slate-100/15");
+            return btn;
+          };
+
+          const addEllipsis = () => {
+            const ellipsis = document.createElement("span");
+            ellipsis.textContent = "...";
+            ellipsis.className = "px-2 text-slate-100/60";
+            pagination.appendChild(ellipsis);
+          };
+
+          // Previous Button: Hide if on first page
+          if (CONFIG.currentPage > 1) {
+            const prevButton = createButton("Previous");
+            prevButton.addEventListener("click", () => {
+              if (CONFIG.currentPage > 1) {
+                CONFIG.currentPage--;
+                renderGames();
+                scrollToTop(); // Scroll to top when navigating pages
+              }
+            });
+            pagination.appendChild(prevButton);
+          }
+
+          // Page Numbers with Custom Logic
+          const maxVisiblePages = 5; // Maximum visible pages
+          const firstPage = 1;
+          const lastPage = totalPages;
+
+          for (let i = 1; i <= totalPages; i++) {
+            if (
+              i === firstPage || // Always show the first page
+              i === lastPage || // Always show the last page
+              (CONFIG.currentPage <= 4 && i <= maxVisiblePages) || // Show first 5 pages if current page <= 4
+              (CONFIG.currentPage > totalPages - 4 &&
+                i > totalPages - maxVisiblePages) || // Show last 5 pages if current page is near the end
+              (i >= CONFIG.currentPage - 1 && i <= CONFIG.currentPage + 1) // Show current page ± 1
+            ) {
+              const pageButton = createButton(i, CONFIG.currentPage === i);
+              pageButton.addEventListener("click", () => {
+                CONFIG.currentPage = i;
+                renderGames();
+                scrollToTop(); // Scroll to top when navigating pages
+              });
+              pagination.appendChild(pageButton);
+            } else if (
+              (i === 2 && CONFIG.currentPage > 4) || // Add ellipsis after the first page
+              (i === totalPages - 1 && CONFIG.currentPage <= totalPages - 4) // Add ellipsis before the last page
+            ) {
+              addEllipsis();
+            }
+          }
+
+          // Next Button: Hide if on last page
+          if (CONFIG.currentPage < totalPages) {
+            const nextButton = createButton("Next");
+            nextButton.addEventListener("click", () => {
+              if (CONFIG.currentPage < totalPages) {
+                CONFIG.currentPage++;
+                renderGames();
+                scrollToTop(); // Scroll to top when navigating pages
+              }
+            });
+            pagination.appendChild(nextButton);
+          }
+        };
+
+        // Initial render
+        renderGames();
+      });
+    </script>
   </body>
 </html>
