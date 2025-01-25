@@ -1,2 +1,10 @@
 @import "tailwindcss";
 
+.custom-scroll::-webkit-scrollbar {
+  display: none; /* Menyembunyikan scrollbar di WebKit browsers (Chrome, Safari, Edge) */
+}
+
+.custom-scroll {
+  -ms-overflow-style: none; /* Menyembunyikan scrollbar di IE/Edge */
+  scrollbar-width: none; /* Menyembunyikan scrollbar di Firefox */
+}

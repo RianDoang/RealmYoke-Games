@@ -22,15 +22,16 @@
     <nav
       class="flex items-center justify-between w-full h-24 px-10 bg-transparent"
     >
-      <a href="#" class="object-cover bg-center w-32">
+      <a href="#" id="logo" class="object-cover bg-center w-32">
         <img
           src="src/assets/logo/logo3transparan.png"
           alt="RealmYoke Games Logo"
         />
       </a>
+
       <div
         id="gameSearchBtn"
-        class="flex items-center justify-between w-1/2 h-12 pl-1 rounded-full transition duration-200 bg-white/10 text-white hover:bg-white/25 md:w-1/4 lg:w-1/3"
+        class="hidden items-center justify-between w-1/2 h-11 pl-1 rounded-full transition duration-200 bg-white/10 text-white hover:bg-white/25 sm:flex md:w-1/3"
       >
         <svg
           class="w-5 h-5 mx-3 text-white/50"
@@ -55,12 +56,32 @@
           autocomplete="off"
         />
       </div>
+
+      <div
+        id="gameSearchBtnMobile"
+        class="flex items-center justify-between py-3 rounded-full cursor-pointer transition duration-200 bg-white/10 text-white hover:bg-white/25 sm:hidden"
+      >
+        <svg
+          class="w-5 h-5 mx-3 text-white/50"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-search"
+        >
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </div>
     </nav>
 
     <section id="gameListSection" class="w-full px-7 py-8">
       <div
         id="gameContainer"
-        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 text-white justify-items-center"
+        class="grid grid-cols-1 justify-items-center gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 text-white"
       >
         <a
           href="public/html/ninja_gaiden_2_black.html"
@@ -605,7 +626,7 @@
     <footer class="w-[95%] mx-auto py-5 mt-5 border-t border-gray-300">
       <span
         class="block text-xs text-center text-gray-500 dark:text-gray-400 md:text-sm"
-        >© 2025 <a href="#" class="hover:underline">WarungPojok™</a>. All Rights
+        >© 2025 <a href="#" class="hover:underline">RealmYoke™</a>. All Rights
         Reserved.</span
       >
     </footer>
@@ -614,15 +635,62 @@
       document.addEventListener("DOMContentLoaded", () => {
         // DOM Elements
         const gameSearchBtn = document.getElementById("gameSearchBtn");
+        const gameSearchBtnMobile = document.getElementById(
+          "gameSearchBtnMobile"
+        );
         const gameSearch = document.getElementById("gameSearch");
         const gameContainer = document.getElementById("gameContainer");
         const pagination = document.getElementById("pagination");
         const gameNone = document.getElementById("gameNone");
+        const nav = document.getElementsByTagName("nav");
+        const logo = document.getElementById("logo");
 
         // Event Listeners
         gameSearchBtn.addEventListener("click", () => {
           gameSearch.focus();
         });
+
+        gameSearchBtnMobile.addEventListener("click", () => {
+          gameSearch.focus();
+        });
+
+        gameSearchBtnMobile.addEventListener("click", () => {
+          gameSearchBtnMobile.classList.toggle("hidden");
+          logo.classList.toggle("hidden");
+          gameSearchBtn.classList.toggle("flex");
+          gameSearchBtn.classList.toggle("hidden");
+          gameSearchBtn.classList.toggle("w-full");
+        });
+
+        document.addEventListener("click", function (e) {
+          if (
+            !gameSearchBtn.contains(e.target) &&
+            !gameSearchBtnMobile.contains(e.target)
+          ) {
+            gameSearchBtnMobile.classList.remove("hidden");
+            logo.classList.remove("hidden");
+            gameSearchBtn.classList.remove("flex");
+            gameSearchBtn.classList.add("hidden");
+            gameSearchBtn.classList.remove("w-full");
+          }
+        });
+
+        // Fungsi untuk mengatur visibilitas elemen berdasarkan ukuran layar
+        function adjustElementsForScreenSize() {
+          if (window.innerWidth > 640) {
+            // Jika lebar layar lebih dari 640px
+            gameSearchBtnMobile.classList.remove("hidden");
+            logo.classList.remove("hidden");
+            gameSearchBtn.classList.remove("flex");
+            gameSearchBtn.classList.add("hidden");
+            gameSearchBtn.classList.remove("w-full");
+          }
+        }
+
+        adjustElementsForScreenSize();
+
+        // Tambahkan event listener untuk perubahan ukuran layar
+        window.addEventListener("resize", adjustElementsForScreenSize);
 
         gameSearch.addEventListener("input", (e) => {
           CONFIG.searchTerm = e.target.value.toLowerCase().trim();
