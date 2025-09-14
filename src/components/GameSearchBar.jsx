@@ -28,17 +28,17 @@ export default function GameSearchBar() {
         placeholder="Search games..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        className="w-full rounded border p-2"
+        className="w-full rounded border border-gray-500 p-2 transition-colors duration-300 outline-none"
       />
 
       {query && (
-        <div className="absolute z-10 mt-1 max-h-64 w-full overflow-y-auto rounded border bg-white shadow-lg">
+        <div className="absolute z-10 mt-1 max-h-64 w-full overflow-y-auto rounded border border-gray-500 bg-gray-100 shadow-lg transition-colors duration-300 dark:bg-gray-800 dark:text-gray-100">
           {suggestions.length > 0 ? (
             <ul>
               {suggestions.map((g) => (
                 <li
                   key={g.id}
-                  className="flex cursor-pointer items-center gap-3 p-2 hover:bg-gray-100"
+                  className="flex cursor-pointer items-center gap-3 p-2 transition duration-300 hover:bg-gray-200 dark:hover:bg-gray-700"
                   onClick={() => handleSelectGame(g)}
                 >
                   <img

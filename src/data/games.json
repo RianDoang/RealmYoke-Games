@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "poster": "/src/assets/games/shape-of-dreams/cover/shape-of-dreams-pc-cover-potrait.jpg",
+    "poster": "/assets/games/shape-of-dreams/cover/shape-of-dreams-pc-cover-potrait.jpg",
     "title": "Shape of Dreams",
     "genre": "Action, Adventure, RPG",
     "developer": "Lizard Smoothie",
@@ -15,7 +15,7 @@
   },
   {
     "id": 2,
-    "poster": "/src/assets/games/hollow-knight-silksong/cover/hollow-knight-silksong-pc-cover-potrait.jpg",
+    "poster": "/assets/games/hollow-knight-silksong/cover/hollow-knight-silksong-pc-cover-potrait.jpg",
     "title": "Hollow Knight Silksong",
     "genre": "Action, Adventure, Platformer",
     "developer": "Team Cherry",
@@ -29,7 +29,7 @@
   },
   {
     "id": 3,
-    "poster": "/src/assets/games/lost-soul-aside/cover/lost-soul-aside-pc-cover-potrait.jpg",
+    "poster": "/assets/games/lost-soul-aside/cover/lost-soul-aside-pc-cover-potrait.jpg",
     "title": "Lost Soul Aside Deluxe Edition",
     "genre": "Action, Adventure, RPG",
     "developer": "Ultizero Games",
@@ -43,7 +43,7 @@
   },
   {
     "id": 4,
-    "poster": "/src/assets/games/le-mans-ultimate/cover/le-mans-ultimate-pc-cover-potrait.jpg",
+    "poster": "/assets/games/le-mans-ultimate/cover/le-mans-ultimate-pc-cover-potrait.jpg",
     "title": "Le Mans Ultimate",
     "genre": "Racing, Simulation",
     "developer": "Studio 397",
@@ -57,7 +57,7 @@
   },
   {
     "id": 5,
-    "poster": "/src/assets/games/for-the-king-II/cover/For_the_King_II_cover-pc-potrait.jpg",
+    "poster": "/assets/games/for-the-king-II/cover/For_the_King_II_cover-pc-potrait.jpg",
     "title": "For The King II",
     "genre": "Adventure, RPG, Strategy",
     "developer": "IronOak Games",
@@ -71,7 +71,7 @@
   },
   {
     "id": 6,
-    "poster": "/src/assets/games/",
+    "poster": "/assets/games/",
     "title": "",
     "genre": "",
     "developer": "",
