@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 import games from "@/data/games.json";
 import Footer from "@/pages/Footer";
 
@@ -14,7 +16,12 @@ export default function Home() {
               key={g.id}
               className="flex flex-col overflow-hidden rounded-lg border border-gray-400 shadow shadow-gray-50 transition duration-300 dark:shadow-gray-800"
             >
-              <img src={g.poster} alt={g.title} className="object-cover" />
+              <LazyLoadImage
+                src={g.poster}
+                alt={g.title}
+                className="object-cover"
+                effect="blur"
+              />
 
               {/* Konten */}
               <div className="flex flex-1 flex-col gap-3 p-3">

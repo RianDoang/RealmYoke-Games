@@ -7,7 +7,7 @@ export default function Footer() {
           <a
             href="https://riandoang.vercel.app"
             target="_blank"
-            className="hover:underline hover:text-gray-400"
+            className="hover:underline hover:text-gray-800 dark:hover:text-gray-400"
           >
             RealmYoke™.
           </a>{" "}
